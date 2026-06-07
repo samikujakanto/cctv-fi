@@ -1,19 +1,87 @@
 import type { Article } from "./types";
 
+const BASE = "https://cctv.fi";
+const LOGO = `${BASE}/logo.png`;
+
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${BASE}/#organization`,
+    name: "CCTV.fi",
+    url: BASE,
+    logo: { "@type": "ImageObject", url: LOGO },
+    description:
+      "Suomen kattavin kameravalvonnan tietopankki – lainsäädäntö, GDPR, vertailut ja oppaat.",
+    sameAs: ["https://security.fi"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      areaServed: "FI",
+      availableLanguage: "Finnish",
+    },
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${BASE}/#website`,
+    url: BASE,
+    name: "CCTV.fi",
+    description: "Suomen kattavin kameravalvonnan tietopankki",
+    inLanguage: "fi",
+    publisher: { "@id": `${BASE}/#organization` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${BASE}/artikkelit?q={search_term_string}` },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
 export function articleJsonLd(article: Article, url: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     headline: article.title,
     description: article.excerpt,
     datePublished: article.date,
-    author: { "@type": "Organization", name: "CCTV.fi", url: "https://cctv.fi" },
-    publisher: {
-      "@type": "Organization", name: "CCTV.fi", url: "https://cctv.fi",
-      logo: { "@type": "ImageObject", url: "https://cctv.fi/logo.png" },
-    },
+    dateModified: article.date,
+    inLanguage: "fi",
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: {
+      "@type": "Organization",
+      "@id": `${BASE}/#organization`,
+      name: "CCTV.fi",
+      url: BASE,
+    },
+    publisher: { "@id": `${BASE}/#organization` },
+    image: {
+      "@type": "ImageObject",
+      url: `${BASE}/og-default.png`,
+      width: 1200,
+      height: 630,
+    },
+    keywords: article.tags.join(", "),
+    articleSection: article.category,
+    isPartOf: { "@id": `${BASE}/#website` },
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 }
 
@@ -24,18 +92,24 @@ export function faqJsonLd(faqs: { question: string; answer: string }[]) {
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
     })),
   };
 }
 
-export function organizationJsonLd() {
+export function categoryPageJsonLd(name: string, url: string, desc: string) {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "CCTV.fi",
-    url: "https://cctv.fi",
-    description: "Suomen kattavin kameravalvonnan tietopankki – lainsäädäntö, GDPR, vertailut ja oppaat.",
-    sameAs: ["https://security.fi"],
+    "@type": "CollectionPage",
+    "@id": `${url}#collectionpage`,
+    name,
+    description: desc,
+    url,
+    inLanguage: "fi",
+    isPartOf: { "@id": `${BASE}/#website` },
+    publisher: { "@id": `${BASE}/#organization` },
   };
 }
