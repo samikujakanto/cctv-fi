@@ -1,0 +1,93 @@
+---
+title: "Hikvision AcuSense opas – älykäs liikkeentunnistus"
+slug: "hikvision-acusense-opas"
+category: "kamerat"
+excerpt: "Hikvision AcuSense erottaa ihmiset ja ajoneuvot muusta liikkeestä. Opas selittää, miten AcuSense toimii, mihin se sopii ja miten se konfiguroidaan oikein vähentämään turhia hälytyksiä."
+date: "2026-06-03"
+readTime: 8
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Hikvision", "AcuSense", "AI-kamera", "liikkeentunnistus"]
+---
+
+Hikvision AcuSense on Hikvisionin älykäs liikkeentunnistusteknologia, joka käyttää tekoälypohjaisia neuroverkkoja erottamaan ihmiset ja ajoneuvot muusta liikkeestä – lehtien heilumisesta, sadevedestä tai eläimistä.
+
+## Miten AcuSense toimii?
+
+Perinteinen liiketunnistus reagoi kaikkeen liikkeeseen, mikä johtaa lukemattomiin turhiin hälytyksiin. AcuSense käyttää syväoppimisalgoritmia, joka analysoi jokaisen liiketunnistuksen kuvaruudun reaaliaikaisesti.
+
+Prosessi toimii kolmessa vaiheessa:
+
+1. **Liiketunnistus** – kamera havaitsee liikettä kuva-alueella
+2. **Kohteen luokittelu** – AI-algoritmi analysoi, onko kohde ihminen, ajoneuvo vai muu liike
+3. **Hälytyksen valinta** – ainoastaan ihmis- tai ajoneuvoliike laukaisee hälytyksen
+
+Tulos: huomattavasti vähemmän turhia hälytyksiä, ilman että oikeat hälytykset jäävät huomaamatta.
+
+## AcuSense-kameroiden tunnistaminen
+
+Hikvision merkitsee AcuSense-mallit useimmiten kirjaimella **G** tuotenumerossa (esim. DS-2CD2143G2-I). Vanhemmat AcuSense-mallit käyttivät G0- tai G2-loppuliitettä.
+
+Uusimmat AcuSense-mallit (2024–2026) käyttävät parannettua versiota, joka tunnistaa myös:
+- Laukun ja pyörän käyttäjän
+- Asunnon asukkaan vs. tuntemattoman
+- Auton vs. moottoripyörän
+
+## Konfigurointi – näin asetat AcuSense oikein
+
+Oikea konfigurointi on kriittistä parhaan tuloksen saamiseksi.
+
+### 1. Tunnistusalueen rajaus
+
+Rajaa **Intrusion Detection** tai **Line Crossing** -alue vain valvottavalle alueelle. Laaja-alainen tunnistus koko kuvassa lisää väärihälytyksiä.
+
+### 2. Herkkyyden säätö
+
+AcuSense-herkkyys on yleensä jaettu skaalalle 1–100. Aloita keskiarvosta (50) ja säädä palautteen perusteella:
+- Liikaa hälytyksiä → laske herkkyyttä
+- Oikeita kohteita jää tunnistamatta → nosta herkkyyttä
+
+### 3. Valvottavat kohdetyypit
+
+Valitse selkeästi, hälytätkö ihmisistä, ajoneuvoista vai molemmista. Esimerkiksi varastossa voi olla järkevää hälyttää vain ihmisistä, parkkipaikalla molemmista.
+
+### 4. Aikataulutus
+
+Aseta tunnistusaikataulu – yönaikaiset hälytykset ovat yleensä kriittisimpiä, päivän aikana hälytyksiä voi rajoittaa tai suodattaa.
+
+## AcuSense vs. ColorVu
+
+Hikvision tarjoaa myös ColorVu-teknologian, joka tuottaa värillisen kuvan pimeässä ilman infrapunaa. Nämä eivät ole toisiaan poissulkevia:
+
+| Ominaisuus | AcuSense | ColorVu |
+|-----------|---------|---------|
+| Älykäs liiketunnistus | ✅ | ❌ |
+| Värikuva pimeässä | ❌ | ✅ |
+| Yhdistettävissä | - | AcuSense + ColorVu -mallit saatavilla |
+| Hinta | Kohtalainen | Hieman korkeampi |
+
+AcuSense + ColorVu -yhdistelmämallit ovat suosituimpia, koska ne yhdistävät älykkään tunnistuksen ja laadukkaan värikuvan.
+
+## Yhteensopivuus tallentimien kanssa
+
+AcuSense vaatii yhteensopivan NVR-tallentimen täysimittaisen toiminnan varmistamiseksi. Hikvisionin **AcuSense NVR** -tallentimet (esim. DS-7608NXI-serie) tukevat:
+
+- AcuSense-kuvanhakua (hae ihmis- tai ajoneuvoliike)
+- Älykkäitä tapahtumalokeja
+- Reaaliaikaisia ilmoituksia Hik-Connect-sovelluksessa
+
+[Security.fi:n asiantuntijat ovat vertailleet Hikvisionin tallentimia laajemmin tässä oppaassa](https://security.fi/oppaat/nvr-vertailu), mukaan lukien yhteensopivuustaulukot.
+
+## Usein kysytyt kysymykset
+
+### Toimiiko AcuSense pimeässä?
+
+Kyllä, AcuSense toimii infrapunakuvauksen kanssa. Tunnistusalgoritmit toimivat myös mustavalkoisessa IR-kuvassa. AcuSense + ColorVu -yhdistelmämalleissa tunnistus toimii myös värikuvassa pimeässä.
+
+### Vähentääkö AcuSense oikeasti turhia hälytyksiä?
+
+Merkittävästi. Testeissä perinteinen liiketunnistus voi hälyttää sadesateella tai tuulisella säällä satoja kertoja päivässä. AcuSense suodattaa lähes kaikki nämä, ilman että oikeat ihmishavainnot jäävät huomaamatta.
+
+### Voidaanko AcuSense integroida kolmannen osapuolen VMS-järjestelmiin?
+
+Kyllä, ONVIF-profilein kautta. Osa VMS-järjestelmistä tukee myös Hikvisionin SDK:ta, joka mahdollistaa syvemmän integraation metadatan siirtoon.

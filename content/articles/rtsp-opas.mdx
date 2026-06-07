@@ -1,0 +1,150 @@
+---
+title: "RTSP-opas – suoratoisto kameravalvonnassa"
+slug: "rtsp-opas"
+category: "oppaat"
+excerpt: "RTSP (Real Time Streaming Protocol) on kameravalvonnan suoratoiston standardi. Tämä opas kertoo, miten RTSP-yhteys muodostetaan, miten kameraa käytetään kolmannen osapuolen ohjelmistossa ja miten RTSP-virta debugataan."
+date: "2026-05-30"
+readTime: 11
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["RTSP", "suoratoisto", "VMS", "kameraintegraatio", "opas"]
+---
+
+RTSP (Real Time Streaming Protocol, RFC 2326) on protokolla, jota käytetään lähes kaikkien IP-kameroiden videokuvan suoratoistoon verkon yli. RTSP:n ymmärtäminen on välttämätöntä kameravalvontajärjestelmien tehokäyttäjälle.
+
+## Mikä on RTSP?
+
+RTSP on sovelluskerroksen protokolla, joka toimii TCP:n (tai UDP:n) päällä portissa 554. Se on suunniteltu reaaliaikaiseen mediavirtaukseen ja tukee:
+
+- **Play** – virran toisto
+- **Pause** – virran pysäytys
+- **Record** – tallennus
+- **Setup** – parametrien neuvottelu (codec, bitrate)
+
+RTSP itsessään ei siirtä mediaa – se hallinnoi yhteyttä. Mediadata kulkee yleensä **RTP** (Real-time Transport Protocol) -protokollalla.
+
+## RTSP-osoitteen muoto
+
+Yleinen RTSP-URL-rakenne:
+
+```
+rtsp://käyttäjätunnus:salasana@IP-osoite:portti/polku
+```
+
+### Dahua-kamerat
+
+```
+rtsp://admin:SALASANA@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0
+```
+
+- `subtype=0` = päävirta (korkea resoluutio)
+- `subtype=1` = alivirta (matala resoluutio, mobiiliin)
+
+### Hikvision-kamerat
+
+```
+rtsp://admin:SALASANA@192.168.1.64:554/Streaming/Channels/101
+```
+
+- `101` = kanava 1, päävirta
+- `102` = kanava 1, alivirta
+- `201` = kanava 2, päävirta
+
+### Axis-kamerat
+
+```
+rtsp://root:SALASANA@192.168.1.10/axis-media/media.amp
+```
+
+### ONVIF-standardimuoto
+
+ONVIF-yhteensopivat kamerat (lähes kaikki modernit kamerat) tarjoavat RTSP-osoitteen ONVIF Device Discovery -palvelun kautta:
+
+```
+rtsp://admin:SALASANA@192.168.1.108:554/onvif1
+```
+
+## VLC-testaus
+
+VLC Media Player on helpoin tapa testata RTSP-yhteyttä:
+
+1. Avaa VLC
+2. Media → Open Network Stream
+3. Syötä RTSP-URL
+4. Paina Play
+
+Komentorivillä:
+
+```bash
+vlc rtsp://admin:SALASANA@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0
+```
+
+## FFmpeg – tallennus ja konvertointi
+
+FFmpeg on tehokas työkalu RTSP-virtojen käsittelyyn:
+
+### Kuvakaappaus
+
+```bash
+ffmpeg -i "rtsp://admin:SALASANA@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0" -frames:v 1 screenshot.jpg
+```
+
+### Tallentaminen tiedostoon
+
+```bash
+ffmpeg -i "rtsp://admin:SALASANA@IP:554/cam/realmonitor?channel=1&subtype=0"   -c copy -t 60 tallenne.mp4
+```
+
+### Jatkuva tallennus 1h segmenteissä
+
+```bash
+ffmpeg -i "rtsp://..." -c copy -f segment -segment_time 3600   -segment_format mp4 tallenne_%Y%m%d_%H%M%S.mp4
+```
+
+## Yleisimmät ongelmat
+
+### Connection refused (port 554)
+
+Syy: RTSP ei ole käytössä tai palomuuri blokkaa. Tarkista:
+1. Kameran verkkoasetukset → RTSP-portti päällä
+2. Palomuuri sallii portti 554
+3. VLANit eivät estä liikennettä
+
+### Authentication failed
+
+Syy: Väärä käyttäjätunnus tai salasana. Tarkista:
+1. Käyttäjätunnus ja salasana (huomioi erikoismerkit URL-enkoodauksessa: `@` → `%40`, `:` → `%3A`)
+2. Kamerassa täytyy olla RTSP-käyttäjä konfiguroituna
+
+### Video lag / buffering
+
+Syy: Verkkoviive tai bufferointi. Korjaustoimenpiteet:
+1. Käytä alivirta (`subtype=1`) hitailla yhteyksillä
+2. Tarkista verkon kaistanleveys
+3. VLC:ssä: Tools → Preferences → Input & Codecs → Network Caching (pienennä 300ms → 100ms)
+
+## Integraatio VMS-ohjelmistoihin
+
+Kaikki merkittävät VMS-ohjelmistot (Milestone, Genetec, Nx Witness, Dahua DSS) tukevat RTSP:tä. Kun lisäät kameran VMS-ohjelmistoon:
+
+1. Valitse kamera ONVIF-yhteensopivana
+2. Syötä IP-osoite, käyttäjätunnus ja salasana
+3. VMS hakee RTSP-osoitteet automaattisesti ONVIF:n kautta
+
+Manuel RTSP-lisäys tehdään vain, jos automaattinen tunnistus ei toimi.
+
+[Security.fi:n teknisistä integraatioista löydät lisää tietoa kameravalvonnan suunnitteluoppaasta](https://security.fi/oppaat/tekninen-integraatio).
+
+## Usein kysytyt kysymykset
+
+### Mikä on ero RTSP:n ja RTMP:n välillä?
+
+RTSP on perinteinen valvontakameroiden protokolla, jota käytetään lähiverkossa. RTMP on alun perin Adoben kehittämä suoratoistoprotokolla, jota käytetään enemmän web-suoratoistoon (YouTube Live, Twitch). Valvontakameroissa käytetään aina RTSP:tä.
+
+### Voiko RTSP-virran siirtää internetiin turvallisesti?
+
+Suora RTSP-liikenne ei ole salattu (ei käytä TLS:ää), joten sitä ei pidä avata suoraan internetiin. Oikea tapa: käytä VPN:ää tai RTSP-over-TLS-tunnelointia.
+
+### Kuinka paljon kaistaa RTSP-virta kuluttaa?
+
+Tyypillinen 4MP H.265-kamera: päävirta 2–4 Mbps, alivirta 512 Kbps – 1 Mbps. 8-kamerainen järjestelmä vaatii siis noin 16–32 Mbps lähiverkon kaistaa tallentimelle.

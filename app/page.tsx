@@ -1,103 +1,106 @@
-import Image from "next/image";
+// Server Component – hakee datan, renderöi staattisesti
+import { getAllArticles } from "@/lib/articles";
+import { ArticleCard } from "@/components/ArticleCard";
+import { CategoryCards } from "@/components/CategoryCards";
+import Link from "next/link";
 
-export default function Home() {
+export default async function HomePage() {
+  const articles = getAllArticles();
+  const latest = articles.slice(0, 9);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      {/* Hero */}
+      <section style={{
+        background: "linear-gradient(135deg, #0a0e1a 0%, #0d1b3e 50%, #0a0e1a 100%)",
+        borderBottom: "1px solid #1e293b",
+        padding: "5rem 1.5rem",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div style={{
+          position: "absolute", top: "50%", left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 600, height: 600,
+          background: "radial-gradient(circle, #3b82f620 0%, transparent 70%)",
+          pointerEvents: "none",
+        }} />
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
+          <div style={{
+            display: "inline-block",
+            background: "#3b82f610", border: "1px solid #3b82f630",
+            borderRadius: 20, padding: "6px 16px",
+            fontSize: 13, color: "#3b82f6", fontWeight: 600, marginBottom: "1.5rem",
+          }}>
+            🇫🇮 Suomen #1 kameravalvonnan tietolähde
+          </div>
+          <h1 style={{
+            fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 900, lineHeight: 1.1,
+            marginBottom: "1.5rem",
+            background: "linear-gradient(135deg, #f9fafb 0%, #3b82f6 100%)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+          }}>
+            CCTV.fi
+          </h1>
+          <p style={{ fontSize: "1.25rem", color: "#9ca3af", maxWidth: 640, margin: "0 auto 2rem", lineHeight: 1.6 }}>
+            CCTV.fi auttaa ymmärtämään kameravalvontaa, tietosuojaa,
+            tekoälyanalytiikkaa ja turvallisuusteknologiaa Suomessa.
+          </p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/artikkelit" style={{ background: "#3b82f6", color: "#fff", padding: "12px 28px", borderRadius: 8, fontWeight: 600, fontSize: 15, textDecoration: "none" }}>
+              Selaa artikkeleita →
+            </Link>
+            <Link href="/kategoriat/vertailut" style={{ background: "#1a2235", color: "#f9fafb", border: "1px solid #1e293b", padding: "12px 28px", borderRadius: 8, fontWeight: 600, fontSize: 15, textDecoration: "none" }}>
+              Laitevertailut
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Stats */}
+      <section style={{ background: "#111827", borderBottom: "1px solid #1e293b", padding: "1.5rem" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "center", gap: "3rem", flexWrap: "wrap" }}>
+          {[{ n: `${articles.length}`, label: "Artikkelia" }, { n: "5", label: "Vertailua" }, { n: "5", label: "Aihealuetta" }, { n: "2026", label: "Päivitetty" }].map((s) => (
+            <div key={s.label} style={{ textAlign: "center" }}>
+              <div style={{ fontSize: 24, fontWeight: 800, color: "#3b82f6" }}>{s.n}</div>
+              <div style={{ fontSize: 13, color: "#6b7280" }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Categories */}
+      <section style={{ maxWidth: 1200, margin: "4rem auto", padding: "0 1.5rem" }}>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: "1.5rem" }}>Aihealueet</h2>
+        <CategoryCards />
+      </section>
+
+      {/* Latest articles */}
+      <section style={{ maxWidth: 1200, margin: "0 auto 4rem", padding: "0 1.5rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700 }}>Uusimmat artikkelit</h2>
+          <Link href="/artikkelit" style={{ fontSize: 14, color: "#3b82f6" }}>Kaikki artikkelit →</Link>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
+          {latest.map((article) => <ArticleCard key={article.slug} article={article} />)}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{
+        background: "linear-gradient(135deg, #1e3a5f, #0a1628)",
+        border: "1px solid #1e4a8a", borderRadius: 16,
+        maxWidth: 1160, margin: "0 auto 4rem", padding: "3rem", textAlign: "center",
+      }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12 }}>Tarvitsetko kameravalvontaratkaisun?</h2>
+        <p style={{ color: "#9ca3af", marginBottom: "1.5rem" }}>
+          Security.fi:n asiantuntijat suunnittelevat ja asentavat kameravalvontajärjestelmät Suomessa.
+        </p>
+        <Link href="https://security.fi" style={{ background: "#3b82f6", color: "#fff", padding: "12px 28px", borderRadius: 8, fontWeight: 600, textDecoration: "none" }}>
+          Siirry Security.fi:hin →
+        </Link>
+      </section>
     </div>
   );
 }

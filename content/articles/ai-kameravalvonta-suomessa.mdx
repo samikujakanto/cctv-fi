@@ -1,0 +1,108 @@
+---
+title: "AI-kameravalvonta Suomessa – mitä on mahdollista?"
+slug: "ai-kameravalvonta-suomessa"
+category: "tekoäly"
+excerpt: "Tekoälypohjainen kameravalvonta on mullistamassa turvallisuusalaa. Suomessa AI-analytiikka on laillista tietyin reunaehdoin. Tämä opas kertoo, mitä teknologia mahdollistaa ja mitä juridisia rajoitteita on olemassa."
+date: "2026-05-28"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: true
+tags: ["tekoäly", "AI-analytiikka", "kameravalvonta", "LPR", "kasvojentunnistus"]
+---
+
+Tekoäly on muuttanut kameravalvontaa perusteellisesti. Perinteiset kamerat tallensivat passiivisesti. AI-kamerat analysoivat reaaliaikaisesti: tunnistavat ihmisiä, ajoneuvoja, rekisterikilpiä ja poikkeavaa käyttäytymistä – ja hälyttävät automaattisesti.
+
+## Mitä AI-kameravalvonta on?
+
+Modernissa AI-kameravalvonnassa kamera tai tallennin prosessoi videokuvan paikallisesti neuroverkon avulla. Tämä mahdollistaa:
+
+1. **Kohteen luokittelu** – ihminen, ajoneuvo, eläin
+2. **Kasvojen tunnistus** – tunnettu vs. tuntematon henkilö
+3. **LPR/ANPR** – rekisterikilpien automaattinen lukeminen
+4. **Käyttäytymisanalyysi** – poikkeava liike, kaatuminen, väkivalta
+5. **Kävijälaskenta** – ihmisvirtojen analysointi
+6. **Perimeter protection** – virtuaaliset rajat
+
+## AI-kameravalvonnan teknologiat
+
+### Reunalaskenta (Edge AI)
+
+Moderni trendi on tehdä AI-analyysi suoraan kamerassa – ei pilvipalvelussa. Edut:
+- Reaaliaikainen analyysi (< 100ms viive)
+- Ei tarvita suurta verkkokaistaa metadatalle
+- Yksityisyyden suoja paranee (raakakuva ei lähde mihinkään)
+
+Pääomistajat: Dahua, Hikvision, Axis, Bosch
+
+### Pilvianalytiikka
+
+Kuvamateriaali tai metadata lähetetään pilveen analysoitavaksi. Mahdollistaa:
+- Kehittyneemmät algoritmit
+- Keskitetyn hallinnan usealle kohteelle
+- Helpomman päivittämisen
+
+### VSaaS ja AI yhdistettynä
+
+Pilvipohjaiset Video Surveillance as a Service -ratkaisut (esim. Ava Security, Verkada, Eagle Eye Networks) yhdistävät VSaaS:n ja AI:n.
+
+## Mitä on laillista Suomessa?
+
+### Sallittua
+
+- **Ihminen/ajoneuvo-suodatus** – turhien hälytysten vähentäminen ✅
+- **LPR/ANPR** – rekisterikilpien lukeminen omalla alueella ✅
+- **Kävijälaskenta** – anonymisoitujen henkilöiden laskeminen ✅
+- **Käyttäytymisanalyysi** – kaatumisen tai hyökkäyksen tunnistus ✅
+- **Perimeter protection** – virtuaaliset hälytysalueet ✅
+
+### Rajoitettua tai kiellettyä
+
+- **Kasvojentunnistus** – vaatii erittäin vahvan perusteen, käytännössä rajoitettu viranomaisille ⚠️
+- **Biometriset tunnisteet** – GDPR:n erityinen tietosuojaluokka ❌
+- **Etnisyyden tai iän analysointi** – syrjintäriski, käytännössä kielletty ❌
+- **Henkilöiden järjestelmällinen seuranta** – vaatii erityisen perusteen ⚠️
+
+### EU AI Act 2024
+
+EU:n tekoälylaki (AI Act) tuli voimaan 2024 ja luokittelee korkeariskisiksi AI-järjestelmiksi mm. biometrisen tunnistuksen julkisessa tilassa. Tämä tiukentaa kasvojentunnistuksen käyttöä Suomessa entisestään.
+
+## Käytännön sovelluksia Suomessa
+
+### Kauppa
+
+- **Kävijälaskenta** osastoittain → tuoternewton optimointi
+- **Poikkeavan käyttäytymisen tunnistus** → hälytysvarkaan toiminnasta
+- **Jonon pituuden analysointi** → kassahenkilöstön optimointi
+
+### Teollisuus
+
+- **Turvavarusteiden tarkistus** – henkilösuojainten käyttö (kypärä, liivi)
+- **Vaarallisten alueiden valvonta** – hälytys jos henkilö menee vaara-alueelle
+- **Prosessianalytiikka** – laitteiden toiminnan seuranta
+
+### Liikenne ja parkkialueet
+
+- **LPR** – luvattomien ajoneuvojen tunnistus, maksuautomaation tuki
+- **Pitkäaikainen pysäköinti** – hälytys liian pitkästä pysäköinnistä
+- **Liikennevirta-analytiikka** – ruuhkien ennakointi
+
+### Taloyhtiöt
+
+- **Tuntemattomien tunnistus** – hälyytys porraskäytävässä (ei kasvojentunnistus, vain "tuntematon")
+- **Porraskäytävän kulunvalvonta** – ovipuhelin + AI yhdistettynä
+
+[Security.fi on julkaissut laajan oppaan tekoälyanalytiikan integroimisesta turvallisuusjärjestelmiin](https://security.fi/oppaat/ai-kameravalvonta), jossa käsitellään myös hankkeen vaatima tietosuoja-arviointi.
+
+## Usein kysytyt kysymykset
+
+### Onko kasvojentunnistus täysin kielletty Suomessa?
+
+Ei täysin, mutta sen käyttö on hyvin rajoitettua. Poliisi ja tietyt viranomaiset voivat käyttää kasvojentunnistusta laissa säädetyissä tilanteissa. Yksityisyrityksille kasvojentunnistus julkisessa tilassa tai asiakasympäristössä on käytännössä mahdotonta toteuttaa laillisesti ilman nimenomaista suostumusta.
+
+### Miten AI-kameravalvonta eroaa perinteisestä?
+
+Perinteinen kamera tallentaa passiivisesti ja ihminen katsoo tallenteen jälkikäteen. AI-kamera analysoi reaaliaikaisesti ja hälyttää automaattisesti poikkeamista. Tämä mahdollistaa nopeamman reagoinnin ja huomattavasti pienemmän valvontahenkilöstön tarpeen.
+
+### Voidaanko AI-analytiikka integroida olemassa olevaan kamerajärjestelmään?
+
+Osittain. Vanhempiin kamerojärjestelmiin voidaan lisätä erillinen AI-videoanalytiikkapalvelin (esim. Nx AI, Dahua AI Server). Parhaaseen tulokseen päästään kuitenkin modernilla AI-kameralla, jossa prosessointi tapahtuu kamerassa itsessään.

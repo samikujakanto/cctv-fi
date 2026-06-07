@@ -1,0 +1,112 @@
+---
+title: "NIS2 ja kameravalvontajärjestelmät – mitä direktiivi vaatii?"
+slug: "nis2-ja-kameravalvontajarjestelmat"
+category: "lainsäädäntö"
+excerpt: "EU:n NIS2-direktiivi tiukensi merkittävästi kyberturvallisuusvaatimuksia kriittisillä toimialoilla. Kameravalvontajärjestelmät ovat nyt osa tietoturvariskien arviointia. Tämä opas kertoo, mitä NIS2 vaatii."
+date: "2026-05-25"
+readTime: 9
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["NIS2", "kyberturvallisuus", "tietoturva", "kriittinen infrastruktuuri"]
+---
+
+NIS2-direktiivi (Network and Information Security Directive 2) tuli voimaan EU:ssa lokakuussa 2024. Se laajentaa merkittävästi tietoturvavelvoitteita ja koskee nyt myös toimijoita, jotka eivät aiemmin olleet kyberturvallisuussääntelyn piirissä.
+
+## Mikä on NIS2?
+
+NIS2 korvasi alkuperäisen NIS-direktiivin (2016) ja laajensi sen soveltamisalaa merkittävästi. Direktiivi velvoittaa keskeisiä ja tärkeitä toimijoita:
+
+- Ottamaan käyttöön kyberturvallisuusriskien hallintatoimenpiteet
+- Raportoimaan merkittävistä tietoturvaloukkauksista
+- Varmistamaan toiminnan jatkuvuus
+
+## Ketä NIS2 koskee?
+
+### Kriittiset toimijat (Essential Entities)
+
+- Energia (sähkö, öljy, kaasu)
+- Liikenne (lentoliikenne, rautatiet, merenkulku, tieliikenne)
+- Pankit ja finanssimarkkinat
+- Terveydenhuolto
+- Juomavesi ja jätevesi
+- Digitaalinen infrastruktuuri
+- Julkinen hallinto
+
+### Tärkeät toimijat (Important Entities)
+
+- Posti- ja kuriiripalvelut
+- Jätehuolto
+- Kemikaaliteollisuus
+- Elintarvikeala
+- Valmistava teollisuus
+- Digitaaliset palvelut (verkkomarkkinapaikat, hakukoneet, pilvipalvelut)
+
+## Miten NIS2 vaikuttaa kameravalvontaan?
+
+Kameravalvontajärjestelmät ovat osa kriittistä IT- ja OT-infrastruktuuria NIS2-velvoitteiden alaisissa organisaatioissa.
+
+### 1. Tietoturvariskien arviointi
+
+NIS2 vaatii kattavan riskiarvioinnin, johon sisältyy myös:
+- Kameravalvontajärjestelmien haavoittuvuudet
+- Verkkoyhteyksien tietoturva
+- Pilvipohjaisten tallennusratkaisujen riskit
+
+### 2. Toimitusketjun turvallisuus
+
+NIS2:n toimitusketjuvaatimukset tarkoittavat käytännössä:
+- Kameravalmistajien tietoturvallisuuden arviointia
+- Firmware-päivityspolitiikan varmistaminen valmistajalta
+- Sopimustason tietoturvavaatimukset laitevalmistajille
+
+### 3. Tapahtumaraportointivelvoite
+
+Merkittävä kameravalvontajärjestelmään kohdistuva kyberhyökkäys (esim. järjestelmän lamauttaminen tai tietovuoto) täytyy raportoida viranomaisille 24 tunnin kuluessa.
+
+### 4. Käyttöoikeuksien hallinta
+
+NIS2 edellyttää tiukkaa IAM:ia (Identity and Access Management):
+- Vahva tunnistautuminen järjestelmiin
+- Käyttöoikeuksien vähimmistöperiaate
+- Pääsylokien seuranta
+
+## Tekniset toimenpiteet kameravalvontajärjestelmille
+
+### Verkon segmentointi
+
+Kameraverkko tulee erottaa toimistoverkosta VLAN:eilla tai fyysisesti erillisellä verkolla. Tämä rajoittaa hyökkäyspinta-alaa merkittävästi.
+
+### Firmware-päivitykset
+
+Kamerajärjestelmien firmware tulee päivittää järjestelmällisesti. Suositus:
+- Tarkista päivitykset kvartaaleittain
+- Ota automaattipäivitys käyttöön jos valmistaja tukee
+- Dokumentoi päivitykset
+
+### Salasanapolitiikka
+
+- Vaihda oletussalasanat välittömästi
+- Käytä yksilöllisiä salasanoja per laite
+- Harkitse salasananhallintajärjestelmää
+
+### Salaus
+
+- Käytä HTTPS-hallintaliikennettä
+- RTSP over TLS etäkäytössä
+- Tallenteiden salaus NVR:ssä
+
+[Security.fi on julkaissut NIS2-yhteensopivuusoppaan turvallisuusalan yrityksille](https://security.fi/oppaat/nis2-vaatimukset), jossa käsitellään käytännön toimenpiteet vaihe vaiheelta.
+
+## Usein kysytyt kysymykset
+
+### Koskeeko NIS2 pieniä taloyhtiöitä?
+
+Ei suoraan. NIS2 koskee pääasiassa suuria ja keskisuuria yrityksiä kriittisillä toimialoilla. Alle 50 henkilön mikroyritykset ja pienyritykset on pääosin rajattu direktiivin ulkopuolelle. Kuitenkin hyvät kyberturvallisuuskäytännöt – kuten oletussalasanojen vaihtaminen – ovat suositeltavia kaikille.
+
+### Mitä tapahtuu jos NIS2-vaatimuksia ei noudateta?
+
+Sanktiot ovat merkittäviä: kriittisille toimijoille enintään 10 miljoonaa euroa tai 2% vuotuisesta globaalista liikevaihdosta. Tärkeille toimijoille enintään 7 miljoonaa euroa tai 1.4% liikevaihdosta. Lisäksi toiminta voidaan keskeyttää.
+
+### Miten voin tietää, onko yritykseni NIS2-velvoitteiden piirissä?
+
+Traficom (Liikenne- ja viestintävirasto) on Suomessa NIS2:n valvova viranomainen. Traficomin sivuilla on ohjeet itsearviointiin. Peukalosääntö: yli 50 henkilöä työllistävä yritys kriittisellä toimialalla on todennäköisesti NIS2:n piirissä.
