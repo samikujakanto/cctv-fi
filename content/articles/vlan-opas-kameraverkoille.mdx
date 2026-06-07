@@ -1,0 +1,103 @@
+---
+title: "VLAN-opas kameraverkoille – verkon segmentointi"
+slug: "vlan-opas-kameraverkoille"
+category: "oppaat"
+excerpt: "VLAN (Virtual LAN) eristää kameravalvontaverkon toimistoverkosta. Tämä parantaa tietoturvaa, estää kameraliikenteen ruuhkautumisen toimistoverkossa ja rajoittaa hyökkäyspinta-alaa merkittävästi."
+date: "2026-06-03"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["VLAN", "verkko", "tietoturva", "kameravalvonta", "NIS2"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+VLAN (Virtual Local Area Network) on verkon looginen segmentointi, joka eristää kameravalvontaverkot muista verkoista saman fyysisen infrastruktuurin päällä. NIS2-direktiivi ja kyberturvallisuuden hyvät käytännöt edellyttävät kameraverkon eristämistä toimistoverkoista. VLAN toteutetaan manageroitavassa kytkimessä (managed switch) ja mahdollisesti palomuurissa.
+
+## Miksi kameraverkko pitää eristää?
+
+Ilman segmentointia kameravalvontakamerat ovat samassa verkossa kuin työasemat, tulostimet ja palvelimet. Tämä tarkoittaa:
+
+1. **Haittaohjelma** toimistoverkosta voi levitä kameroihin
+2. **Hakkeroitu kamera** voi skannata koko toimistoverkon
+3. **Kameraliikenne** kuormittaa toimistoverkon kaistaa
+4. **NIS2-vaatimukset** edellyttävät kriittisten järjestelmien eristämistä
+
+VLAN on tehokkain ja kustannustehokkain ratkaisu.
+
+## VLAN-arkkitehtuuri kameravalvontaan
+
+Suositellaan kolmikerroksinen arkkitehtuuri:
+
+```
+VLAN 10 – Toimistoverkko (työasemat, tulostimet)
+VLAN 20 – Kameraverkko (kamerat, NVR)
+VLAN 30 – Hallintaverkko (kytkimet, reititin)
+```
+
+Palomuuri ohjaa liikennettä VLAN:ien välillä sääntöjen mukaan:
+- Toimistoverkko → Kameraverkko: SALLITTU (NVR:n hallintaohjelma)
+- Kameraverkko → Toimistoverkko: ESTETTY
+- Kameraverkko → Internet: ESTETTY (poislukein aikapalvelin ja päivityspalvelin)
+
+## Käytännön toteutus
+
+### Tarvittavat laitteet
+
+1. **Managed switch** (manageroitava kytkin) – esim. TP-Link TL-SG2008, Cisco SG350, Netgear GS308E
+2. **Palomuuri/reititin** joka tukee VLAN routing – esim. pfSense, OPNsense, Fortinet
+
+Ei-manageroitavilla kytkimillä VLAN:ia ei voi toteuttaa.
+
+### Konfigurointi TP-Link-kytkimessä (esimerkki)
+
+```
+1. Kirjaudu kytkimen hallintasivulle (192.168.0.1)
+2. VLAN → 802.1Q VLAN → Add VLAN 20 (Camera)
+3. Lisää kameroiden portit VLAN 20:een (untagged)
+4. Uplink-portti NVR:lle: tagged VLAN 10 + 20
+5. Tallenna ja testaa
+```
+
+### IP-osoitesuunnittelu
+
+| Verkko | Aliverkko | Laitteet |
+|--------|----------|---------|
+| VLAN 10 | 192.168.1.0/24 | Toimisto |
+| VLAN 20 | 192.168.20.0/24 | Kamerat + NVR |
+
+Kameroille kannattaa asettaa kiinteät IP-osoitteet (static IP) DHCP:n sijaan.
+
+## Palomuurisäännöt
+
+Minimisuositukset:
+
+```
+# Salli NVR:n hallinta toimistoverkosta
+PERMIT 192.168.1.0/24 → 192.168.20.10 (NVR) port 80, 443, 37777
+
+# Estä kameraliikenteen pääsy toimistoon
+DENY 192.168.20.0/24 → 192.168.1.0/24
+
+# Salli kameroiden aikapalvelin (NTP)
+PERMIT 192.168.20.0/24 → pool.ntp.org port 123
+
+# Estä kaikki muu internet-liikenne kameroilta
+DENY 192.168.20.0/24 → 0.0.0.0/0
+```
+
+[Security.fi:n tietoturvaopas](https://security.fi/oppaat/kameravalvonnan-tietoturva) kattaa VLAN-konfiguraation yksityiskohtaisesti eri laitevalmistajien kytkimillä.
+
+## Usein kysytyt kysymykset
+
+### Tarvitseeko VLAN:iin kallista laitteistoa?
+
+Ei. Perustasoinen managed switch maksaa 50–100 €. pfSense on ilmainen palomuuri-ohjelmisto, joka toimii vanhalla PC:llä tai halvalla mini-PC:llä (n. 100–200 €). Kokonaiskustannus pieneen järjestelmään on 150–300 € lisälaitteistoa.
+
+### Voiko VLAN:n toteuttaa ilman palomuurin ostoa?
+
+Kyllä, osittain. Pelkkä VLAN-segmentointi kytkimessä eristää kameraverkon, mutta ilman palomuuria ei voi ohjata liikennettä VLAN:ien välillä. Jos toimistoverkosta ei tarvitse päästä NVR:lle, pelkkä kytkin riittää.
+
+### Mitä tapahtuu jos kamera hakkeroidaan VLAN-ympäristössä?
+
+Hakkeroitu kamera on eristetty VLAN 20:een. Se ei pysty seuraamaan toimistoverkon liikennettä eikä hyökkäämään palvelimiin. Pahimmassa tapauksessa hakkeri näkee muut kamerat, mutta toimistoverkko on suojattu.

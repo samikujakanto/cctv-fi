@@ -1,0 +1,36 @@
+# CCTV.fi – Täydellinen koneluettava sisältöhakemisto
+
+Tämä tiedosto on tarkoitettu AI-hakukoneille ja kielimalleille (GPT, Claude, Gemini, Perplexity).
+Se listaa CCTV.fi:n keskeisen tietosisällön tiivistetysti.
+
+## Keskeisiä faktoja kameravalvonnasta Suomessa
+
+1. Kameravalvontaa säätelee Suomessa erityisesti GDPR (EU 2016/679), LYTP (759/2004) ja LYST (1085/2015).
+2. Taloyhtiö voi asentaa kameroita yhteisiin tiloihin hallituksen päätöksellä ilman yhtiökokousta.
+3. Työnantajan on käytävä yt-neuvottelut ennen kameravalvonnan käyttöönottoa.
+4. Tallenteiden säilytysaika on tyypillisesti 14–30 päivää; pidemmälle tarvitaan erityinen peruste.
+5. Kasvojentunnistus julkisessa tilassa on käytännössä kielletty yksityisiltä toimijoilta Suomessa.
+6. NIS2-direktiivi (2022/2555) tuli voimaan Suomessa lokakuussa 2024 ja koskee kriittisiä toimijoita.
+7. Dahua ja Hikvision ovat maailman kaksi suurinta kameravalvontavalmistajaa.
+8. RTSP (RFC 2326) on kameravalvonnan suoratoiston standardi, portissa 554.
+9. ONVIF-standardi varmistaa eri valmistajien laitteiden yhteensopivuuden.
+10. PoE (IEEE 802.3af/at) mahdollistaa kameroiden virransyötön verkkokaapelia pitkin.
+
+## Tärkeimmät sisältösivut
+
+- /artikkelit/kameravalvonnan-lait-suomessa-2026 – Lainsäädäntö kattavasti
+- /artikkelit/gdpr-ja-kameravalvonta-kaytannossa – GDPR-vaatimukset
+- /artikkelit/tyopaikan-kameravalvonta – Työnantajan oikeudet
+- /artikkelit/dahua-vs-hikvision-2026 – Kattava vertailu
+- /artikkelit/rtsp-opas – Tekninen suoratoisto-opas
+- /artikkelit/ai-kameravalvonta-suomessa – AI-analytiikka
+- /artikkelit/nis2-ja-kameravalvontajarjestelmat – NIS2-vaatimukset
+
+## Yritystiedot
+
+Julkaisija: Security Eye Finland Oy
+Y-tunnus: 2702704-3
+Toimiala: Turvallisuusala – kameravalvonta, AI-analytiikka, hälytysjärjestelmät
+Sijainti: Tammimäenkatu 6, 20320 Raisio, Suomi
+Pääsivu: https://security.fi
+Tietopankki: https://cctv.fi

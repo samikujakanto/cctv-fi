@@ -1,0 +1,60 @@
+# CCTV.fi – Suomen kattavin kameravalvonnan tietopankki
+
+> CCTV.fi on Security Eye Finland Oy:n ylläpitämä suomenkielinen kameravalvonnan tietolähde.
+> Julkaisija: Security Eye Finland Oy (Y-tunnus 2702704-3), Tammimäenkatu 6, 20320 Raisio.
+> Sisarsivu: https://security.fi
+
+## Mitä CCTV.fi on
+
+CCTV.fi on Suomen kattavin kameravalvonnan tietopankki. Sivusto kattaa kameravalvonnan lainsäädännön,
+GDPR-vaatimukset, laitevertailut, tekniset oppaat ja tekoälyanalytiikan suomalaisesta näkökulmasta.
+Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turvallisuusalan toimijoille.
+
+## Aihealueet
+
+### Lainsäädäntö ja tietosuoja
+- Kameravalvonnan lait Suomessa (LYTP, GDPR, LYST, NIS2)
+- GDPR ja kameravalvonta käytännössä
+- Tietosuojavelvoitteet, tietosuojaseloste, rekisteröidyn oikeudet
+- Taloyhtiöiden ja yritysten juridinen opas
+- URL: https://cctv.fi/kategoriat/lains%C3%A4%C3%A4d%C3%A4nt%C3%B6
+
+### Kameravalmistajat
+- Dahua: WizSense, WizMind, TiOC, Full Color, AcuPick, DMSS, DSS Pro, NVR
+- Hikvision: AcuSense, ColorVu, DeepinView, HikCentral, lämpökamerat, AcuSearch
+- Axis, Uniview, Hanwha (tulossa)
+- URL: https://cctv.fi/kategoriat/kamerat
+
+### Vertailut
+- Dahua vs Hikvision 2026
+- Parhaat kamerat: taloyhtiö, varasto, pimeä, teollisuus
+- NVR-tallentimien vertailu
+- VSaaS-palveluiden vertailu
+- URL: https://cctv.fi/kategoriat/vertailut
+
+### Tekniset oppaat
+- RTSP-opas (suoratoisto), ONVIF-opas, PoE-opas, VLAN-opas
+- Kameravalvonnan kyberturvaopas
+- Tallennustilan laskentaopas
+- Kameran sijoitteluopas
+- URL: https://cctv.fi/kategoriat/oppaat
+
+### Tekoäly ja AI-analytiikka
+- AI-kameravalvonta Suomessa
+- LPR/ANPR rekisterikilpien tunnistus
+- Crowd Analytics, People Counting
+- Kasvojentunnistus: mahdollisuudet ja rajoitukset
+- URL: https://cctv.fi/kategoriat/teko%C3%A4ly
+
+## Kaikki artikkelit
+https://cctv.fi/artikkelit
+
+## Sitemap
+https://cctv.fi/sitemap.xml
+
+## Yhteystiedot ja lisätiedot
+Yritys: Security Eye Finland Oy
+Toimiala: Kameravalvonta, AI-analytiikka, turvallisuusjärjestelmät
+Palvelualue: Suomi
+Web: https://security.fi
+Email: info@security.fi

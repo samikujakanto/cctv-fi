@@ -1,0 +1,81 @@
+---
+title: "Hikvision AI-analytiikka – täydellinen opas 2026"
+slug: "hikvision-ai-analytiikka"
+category: "kamerat"
+excerpt: "Hikvisionin tekoälyanalytiikka kattaa AcuSense-liiketunnistuksesta DeepinView-kasvoihin ja TrafficVision-liikenteeseen. Tässä kattava opas kaikkiin AI-ominaisuuksiin 2026."
+date: "2026-06-02"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Hikvision", "AI", "analytiikka", "DeepinView", "AcuSense"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Hikvisionin AI-analytiikka on jaettu kolmeen tasoon: AcuSense (perus), DeepinView (kehittynyt) ja HEOP-alusta (ekosysteemi). AcuSense tunnistaa ihmiset ja ajoneuvot turhia hälytyksiä vähentäen. DeepinView lisää kasvojentunnistuksen, ANPR:n ja käyttäytymisanalyysin. HEOP (Hikvision Edge Open Platform) mahdollistaa kolmannen osapuolen algoritmien ajamisen suoraan kamerassa.
+
+## Taso 1: AcuSense
+
+**Mitä:** Perus-AI ihmis- ja ajoneuvosuodatukseen
+**Missä:** Useimmissa 2-sarjan ja sitä uudemmissa kameroissa
+
+Ominaisuudet:
+- Ihminen vs. ajoneuvo vs. muu liike
+- Perimeter intrusion (virtuaalinen raja)
+- Line crossing (virtuaalinen viiva)
+- Region entrance/exit
+- Loitering detection (pitkään seisova henkilö)
+
+**Käyttökohteet:** Taloyhtiöt, pienyritykset, toimistot
+
+## Taso 2: DeepinView
+
+**Mitä:** Kehittynyt AI enterprise-kohteisiin
+**Missä:** M-sarjan ja Pro-sarjan kameroissa, DS-2CD2xxx**H** -malleissa
+
+Ominaisuudet DeepinViewin kanssa:
+- **Face Recognition** – kasvojen tunnistus (GDPR-rajoitukset)
+- **ANPR/LPR** – rekisterikilpien automaattinen lukeminen
+- **People Counting** – kävijälaskenta
+- **Heat Map** – lämpökartta liikkumisesta
+- **AcuSearch** – attribuuttipohjainen tapahtumaetsintä
+- **Hard Hat Detection** – kypärän käytön valvonta
+- **Mask Detection** – maskin käytön tunnistus
+
+**Käyttökohteet:** Kauppakeskukset, teollisuus, liikenne, isot toimistot
+
+## Taso 3: HEOP-alusta
+
+HEOP (Hikvision Edge Open Platform) on avoin alusta, johon voidaan ladata kolmannen osapuolen AI-algoritmeja suoraan kameraan.
+
+Mahdollisuudet:
+- Lataa erikoistunnut algoritmi (esim. rakennusalan suojainvalvonta)
+- Integroidu teollisuusjärjestelmiin
+- Päivitä AI-malli ilman laitevaihtoa
+
+## Hikvision NVR + AI
+
+AI-analytiikka toimii parhaiten Hikvisionin omassa ekosysteemissä:
+
+| NVR-sarja | AI-tuki |
+|----------|---------|
+| DS-7600NXI | AcuSense täysi |
+| DS-7700NXI | AcuSense + DeepinView osittain |
+| DS-9600NXI | DeepinView täysi |
+| HikCentral | Kaikki, lisäksi analytiikkapalvelut |
+
+[Security.fi:n Hikvision-asiantuntijat](https://security.fi/oppaat/hikvision-asennus) voivat suositella oikean tuoteperheen kohteen tarpeisiin.
+
+## Usein kysytyt kysymykset
+
+### Voidaanko Hikvisionin AI-analytiikkaa käyttää kolmannen osapuolen VMS:n kanssa?
+
+Perus-AI (AcuSense metadata) toimii ONVIF Profile T/M kautta useimpiin VMS-ohjelmistoihin. DeepinView-erikoisominaisuudet (kasvojen tunnistus, kattava LPR) toimivat täysimittaisesti vain HikCentralin tai Hikvisionin NVR:n kanssa.
+
+### Kuinka tarkka AcuSense on ihmisen tunnistamisessa?
+
+Optimaalisissa olosuhteissa yli 95 % tarkkuus. Haastavia tilanteita: hämärä ilman IR-valoa, henkilö kuvattuna hyvin ylhäältä tai kaukaa (yli 30 m), ryhmä ihmisiä tiheässä. Yöllä IR-kuvassa tarkkuus on hieman heikompi kuin päivällä.
+
+### Toimiiko DeepinView pienessä taloyhtiössä?
+
+Teknisesti kyllä, mutta hinta/hyöty-suhde ei ole paras. DeepinView-ominaisuudet kuten kasvojentunnistus ovat enterprise-tason toimintoja. Taloyhtiöille riittää yleensä AcuSense.

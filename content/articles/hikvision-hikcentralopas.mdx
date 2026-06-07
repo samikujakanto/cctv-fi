@@ -1,0 +1,113 @@
+---
+title: "HikCentral Professional opas – Hikvisionin hallintaohjelmisto"
+slug: "hikvision-hikcentralopas"
+category: "kamerat"
+excerpt: "HikCentral Professional on Hikvisionin keskitetty hallintaohjelmisto, joka yhdistää kamerat, kulunvalvonnan ja hälytykset yhteen alustaan. Kattava asennusopas 2026."
+date: "2026-06-06"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["hikvision", "hikcentralopas", "hallintaohjelmisto", "nvr", "vms"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+HikCentral Professional (HCP) on Hikvisionin enterprise-tason videohallintaohjelmisto (VMS), joka tukee jopa 10 000 kameraa yhdessä asennuksessa. Se yhdistää videovalvonnan, kulunvalvonnan, interkomin, hälytysjärjestelmien ja analytiikan yhteen hallintaportaaliin. Ohjelmisto toimii Windows-palvelimella ja siihen on lisenssikohtainen hinnoittelu kamerakanavien mukaan.
+
+## Mikä on HikCentral Professional?
+
+HikCentral Professional on Hikvisionin kehittämä videohallintaohjelmisto (VMS = Video Management Software), joka on suunniteltu keskisuurten ja suurten kohteiden tarpeisiin. Tyypillisiä käyttökohteita ovat:
+
+- Kauppakeskukset ja kauppaketjut (useita toimipisteitä)
+- Sairaalat ja terveyskeskukset
+- Teollisuuslaitokset ja tuotantotehtaat
+- Oppilaitokset ja kampukset
+- Kaupunkien julkiset valvontajärjestelmät
+- Hotellit ja majoitusliikkeet
+
+HikCentral Professional eroaa Hikvisionin kuluttajatuotteista (iVMS-4200, Hik-Connect) siinä, että se on arkkitehtuuriltaan skaalautuva, tukee useita samanaikaisia käyttäjiä eri käyttöoikeuksilla ja sisältää kattavat auditointi- ja raportointiominaisuudet.
+
+## HikCentral Professional -arkkitehtuuri
+
+HCP toimii asiakas-palvelin-arkkitehtuurilla:
+
+**Palvelinkomponentit:**
+- **HCP Core Server**: Hallintamoduuli, joka ylläpitää konfiguraatiota, käyttäjähallintaa ja tapahtumien lokitusta
+- **Stream Media Server (SMS)**: Välittää videovirrat suoraan tai tallentimien kautta
+- **Storage Server**: Verkkopohjainen tallennus, joka voidaan hajauttaa useille palvelimille
+
+**Asiakaskomponentit:**
+- **HikCentral Professional Client**: Windows-sovellus operaattoreille
+- **Web Client**: Selainkäyttöinen hallintapaneeli (Chrome, Edge)
+- **Mobile Client**: iOS ja Android -sovellukset
+
+**Laitteistot:**
+HCP integroituu Hikvisionin omien laitteiden lisäksi ONVIF-yhteensopiviin kameroihin ja tallentimiin. Tuki kattaa yli 10 000 laitteen samanaikaisen hallinnan yhdestä asennuksesta.
+
+## Lisensointi ja hinnoittelu
+
+HikCentral Professional käyttää kanavapohjaista lisensointia:
+
+- **Peruslisenssit**: Oikeuttavat tietyn määrän kameroita (esim. HCP-BASE/8, HCP-BASE/16, HCP-BASE/32)
+- **Laajennuslisenssit**: Lisäkanavalliset lisenssit ylittämään perusmäärän
+- **Moduulikohtaiset lisenssit**: Kulunvalvonta, interkomi, kasvojentunnistus, LPR (rekisterikilpitunnistus)
+
+Peruslisenssi 8 kameralle maksaa Suomessa noin 400–600 €. Kasvojentunnistusmoduuli on erillinen lisenssi, noin 200–400 € lisää. Security.fi:llä on tarkemmat hintatiedot eri lisenssikokonaisuuksille – kannattaa pyytää tarjous ennen investointipäätöstä, sillä hinnat vaihtelevat jälleenmyyjittäin.
+
+Huomioitavaa: HCP-lisenssi on pysyvä (ei tilausmaksu), mutta ohjelmistopäivitykset vaativat voimassa olevan huoltosopimuksen (Software Maintenance Plan, SMP), joka maksaa vuosittain noin 15–20 % lisenssihinnasta.
+
+## Asennus vaihe vaiheelta
+
+### Palvelimen vaatimukset
+
+Pienellä 16–32 kameran järjestelmällä minimikokoonpano on:
+- CPU: Intel Core i7 / Xeon E-sarjaa
+- RAM: 16 GB (suositus 32 GB)
+- Käyttöjärjestelmä: Windows Server 2019 tai Windows 10/11 Pro
+- Tallennustila: SSD-levy ohjelmistolle (vähintään 500 GB), erilliset HDD:t videoarkistolle
+
+### Asennusvaiheet
+
+1. **Lataa asennuspaketti** Hikvisionin viralliselta lataussivulta tai jälleenmyyjältä
+2. **Asenna HCP Core** palvelimelle – asennusohjelma asentaa myös SQL Server -tietokantapalvelimen
+3. **Aktivoi lisenssit** online-aktivoinnilla (vaatii internet-yhteyden) tai offline-tiedostolla
+4. **Lisää laitteet** automaattisella haulla verkosta tai manuaalisesti IP-osoitteen ja käyttäjätunnusten avulla
+5. **Konfiguroi tallennusasetukset**: tallennusaikataulu, kanavat, bitrate
+6. **Luo käyttäjäroolit**: Operaattori, esimies, pääkäyttäjä – kullakin omat käyttöoikeudet
+7. **Testaa hälytykset**: Kamera irtoaa, liikkeen havaitseminen, laitteen käynnistyshälytys
+
+### Ensimmäiset konfiguraatiot
+
+Tärkein konfigurointivaihe on tallennusaikataulujen asettaminen. HCP mahdollistaa jatkuvan tallennuksen, liiketunnistukseen perustuvan tallennuksen tai aikataulutetun tallennuksen yhdistelmät. Käytännöllinen asetus on:
+
+- Päiväaika (07:00–22:00): Liiketunnistustallennnus
+- Yöaika (22:00–07:00): Jatkuva tallennus
+- Arkipyhät: Jatkuva tallennus 24/7
+
+## Tärkeimmät ominaisuudet
+
+**Tapahtumahallinta**: HCP kokoaa kaikki hälytykset keskitettyyn hälytysnäkymään ja mahdollistaa automaattiset toimenpiteet (sähköposti, kameran popup, ovien lukitseminen).
+
+**Karttapohjainen näkymä**: Kamerat voidaan sijoittaa pohjapiirustukseen, jolloin operaattori näkee reaaliaikaisesti jokaisen kameran tilan ja hälytykset sijainnillaan.
+
+**Raportointityökalu**: Automaattiset päivä-, viikko- ja kuukausiraportit käyntikerroista, tallenteen täyttöasteesta ja hälytysmääristä. GDPR:n mukainen lokitus käyttäjätoiminnoista.
+
+**Integraatiot**: HCP tukee kulunvalvontajärjestelmien (HID, ASSA ABLOY, Hikvision ACS), palohälytysjärjestelmien ja kolmannen osapuolen VMS-järjestelmien integroimista SDK:n tai ONVIF-protokollan kautta.
+
+## Usein kysytyt kysymykset
+
+### Mikä on ero HikCentral Essentials ja Professional välillä?
+
+HikCentral Essentials on ilmainen, kevyempi versio, joka sopii pienille kohteille (max 64 kameraa). Se sisältää perusvideovalvonnan, tallenteen katselun ja yksinkertaiset hälytykset. HikCentral Professional on maksullinen enterprise-versio, joka tukee jopa 10 000 kameraa, useita palvelimia, monimutkaisia käyttöoikeushierarkioita, kulunvalvontaintegraatiota, kasvojentunnistusta, LPR-rekisterikilpitunnistusta ja edistyneitä raportointitoimintoja. Käytännön nyrkkisääntö: alle 32 kameran kohteille Essentials riittää usein, sitä suuremmille Professional on perusteltu investointi. Security.fi voi auttaa valitsemaan oikean version kohteesi tarpeiden mukaan.
+
+### Toimiiko HikCentral kolmansien osapuolten kameroiden kanssa?
+
+Kyllä, HikCentral Professional tukee ONVIF Profile S -yhteensopivia kameroita ja tallentimia muilta valmistajilta. Käytännössä tämä tarkoittaa, että Axis, Dahua, Bosch, Sony ja muiden valmistajien ONVIF-kamerat voidaan lisätä järjestelmään. Kuitenkin älykäs analytiikka (AcuSense, kasvojentunnistus, LPR) toimii parhaiten Hikvisionin omilla laitteilla, koska analytiikka tapahtuu kameroissa tai tallentimissa, ei palvelinohjelmistossa. Kolmannen osapuolen kameroista saadaan perusvideo, ei älykästä metadataa. Jos integraatio on kriittinen, selvitä ennen hankintaa yhteensopivuus HCP:n yhteensopivuuslistasta.
+
+### Miten HikCentral Professional täyttää GDPR-vaatimukset?
+
+HCP tarjoaa useita GDPR-tukitoimintoja: kaikki käyttäjien toiminnot kirjataan auditointilokiin (kuka katsoi mitä ja milloin), tallenteen säilytysaika on konfiguroitavissa ja automaattinen poisto voidaan aikatauluttaa, käyttöoikeuksien hallinta varmistaa, ettei kukaan pääse näkemään enemmän kuin heidän roolinsa sallii, ja tietojen vientitoiminto mahdollistaa rekisteröidyn pyynnön toteuttamisen. Suomen tietosuojalaki (1050/2018) edellyttää lisäksi, että rekisteröidyille tiedotetaan valvonnasta. HCP tukee digitaalisia ilmoitustauluja ja infopisteitä, joiden avulla kameravalvontailmoitus voidaan toteuttaa. Suosittelemme konsultoimaan tietosuojavaltuutettua GDPR-vaatimusten täyttämiseksi kokonaisuudessaan.
+
+### Kuinka monta samanaikaista käyttäjää HCP tukee?
+
+HikCentral Professional tukee oletuksena 50 samanaikaista Client-yhteyttä yhdellä palvelimella. Tätä voidaan laajentaa lisäpalvelimilla hajautetussa asennuksessa. Web Client -käyttäjille ei ole kiinteää rajoitusta, mutta suorituskyky riippuu palvelimen prosessoritehosta ja verkon kaistanleveydestä. Käytännössä 100–200 yhtäaikaista Web Client -käyttäjää on mahdollista korkean suorituskyvyn palvelimella. Kaupunkitason valvontakeskuksissa käytetään tyypillisesti hajautettua arkkitehtuuria, jossa useita HCP-palvelimia yhdistää Master-Slave-konfiguraatio.

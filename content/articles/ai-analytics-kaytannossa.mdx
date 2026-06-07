@@ -1,0 +1,96 @@
+---
+title: "AI Analytics käytännössä – mitä tekoäly tekee valvontakuvalle?"
+slug: "ai-analytics-kaytannossa"
+category: "tekoäly"
+excerpt: "AI-analytiikka muuttaa passiivisen valvontakameran aktiiviseksi analysaattoriksi. Tässä oppaassa selitetään miten Object Detection, edge AI ja metadata toimivat kameravalvonnassa käytännössä."
+date: "2026-05-27"
+readTime: 9
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["AI analytics", "object detection", "edge AI", "metadata", "kameravalvonta"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+AI Analytics kameravalvonnassa tarkoittaa reaaliaikaista videovirran analysointia neuroverkon avulla. Moderni edge AI -kamera prosessoi 20–30 kuvaruutua sekunnissa suoraan kameran prosessorissa ilman pilviyhteyden tarvetta. Tuloksena on metadata (koordinaatit, luokitukset, attribuutit), joka lähetetään tallentimelle tai VMS-ohjelmistoon. Dahua ja Hikvision käyttävät omia TI DSP ja ARM Mali-GPU -prosessoreita.
+
+## Mitä AI tekee videovirralle?
+
+### Object Detection – kohteen tunnistus
+Algoritmi etsii videoruudusta tunnettuja objekteja:
+- Henkilö (Pedestrian)
+- Ajoneuvo (Vehicle)
+- Kasvo (Face)
+- Rekisterikilpi (License Plate)
+- Eläin, pyörä, laukku jne.
+
+Jokainen tunnistettu kohde saa bounding boxin (koordinaatit) ja luokituksen sekä confidence-arvon (0–100 %).
+
+### Object Classification – tarkempi luokittelu
+Tunnistuksen jälkeen objekti luokitellaan tarkemmin:
+- Ajoneuvo → auto / kuorma-auto / bussi / moottoripyörä
+- Henkilö → sukupuoli, ikäryhmä, vaatteen väri, laukku
+
+### Tracking – seuranta
+Saman objektin seuraaminen usean kameraruudun ajan. Mahdollistaa liikepolkuanalyysin.
+
+### Attribute Extraction – attribuutien poiminta
+Persoonaattribuutit (vain metadatana, ei biometriikka):
+- Vaatteen väri (punainen takki, sininen paita)
+- Hattu/ei hattu
+- Laukku/reppu
+- Ajoneuvon väri, merkki (edistyneimmissä malleissa)
+
+## Edge AI vs. Cloud AI
+
+### Edge AI (suositeltu)
+Prosessointi tapahtuu kameran tai NVR:n sisäisellä AI-prosessorilla.
+
+**Edut:**
+- Reaaliaikainen (100 ms viive)
+- Ei kaistanleveystarve metadatalle
+- Toimii offline-tilassa
+- Yksityisyys: raakakuva ei lähde pilveen
+
+**Haitat:**
+- Rajoitettu prosessointiteho
+- Vanhemmat algoritmit kuin pilviratkaisuissa
+
+### Cloud AI
+Videokuva tai kuvakehykset lähetetään pilveen analysoitavaksi.
+
+**Edut:**
+- Kehittyneemmät algoritmit
+- Helppo päivittää
+- Massiivinen laskentateho
+
+**Haitat:**
+- Viive 200–500 ms
+- Kaatuva internet = ei analytiikkaa
+- GDPR: mihin videokuva menee?
+
+## Dahua vs. Hikvision AI-suoritin
+
+| Ominaisuus | Dahua | Hikvision |
+|-----------|-------|---------|
+| AI-suoritin | Dahua AI-prosessori | Hikvision HEOP-alusta |
+| Perustason AI | WizSense | AcuSense |
+| Kehittynyt AI | WizMind | DeepinView |
+| Reunaprosessointi | IPC + NVR | IPC + NVR |
+| Metadata-vienti | DSS/DMSS, ONVIF Profile M | HikCentral, ONVIF Profile M |
+
+[Security.fi:n AI-analytiikkaopassivusto](https://security.fi/oppaat/ai-kameravalvonta) kattaa integraatiot kolmannen osapuolen VMS-ohjelmistoihin.
+
+## Usein kysytyt kysymykset
+
+### Kuinka paljon AI-analytiikka lisää kameran hintaa?
+
+WizSense/AcuSense-perustason AI lisää kameraan 20–50 € verrattuna perus-IP-kameraan. Kehittyneempi WizMind/DeepinView nostaa hintaa 50–150 €. Koko järjestelmän tasolla AI:sta saatava hyöty (vähemmän turhia hälytyksiä, nopeampi tapahtumaetsintä) maksaa itsensä nopeasti takaisin.
+
+### Voidaanko vanhaan kameravalvontajärjestelmään lisätä AI?
+
+Osittain. Erillinen AI-videoanalytiikkapalvelin (kuten Dahua AI Server tai Nx AI) voi analysoida olemassa olevien kameroiden kuvaa. Parhaaseen tulokseen päästään kuitenkin moderneilla AI-kameroilla, joissa prosessointi on optimoitu.
+
+### Millä tarkkuudella AI tunnistaa ihmisen?
+
+Optimaalisissa olosuhteissa (hyvä valaistus, selkeä kuva) ihmistunnistuksen tarkkuus on 95–99 %. Haastavia tilanteita: hämärä, osittain piilotettu henkilö, äärimmäiset sääolosuhteet. Väärähälytysnopeus (false positive) on tyypillisesti alle 2 % oikealla konfiguraatiolla.

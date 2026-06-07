@@ -2,7 +2,7 @@ import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 import { categoryLabels } from "@/lib/types";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { FAQSection } from "@/components/FAQSection";
-import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/schema";
+import { articleJsonLd, breadcrumbJsonLd, faqJsonLd, speakableJsonLd } from "@/lib/schema";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { Metadata } from "next";
@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.title,
     description: article.excerpt,
     keywords: [...article.tags, "kameravalvonta", "CCTV", catLabel],
-    authors: [{ name: "CCTV.fi", url: "https://cctv.fi" }],
+    authors: [{ name: "Sami Kuja-Kanto", url: "https://cctv.fi/toimitus" }],
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: "article",
       publishedTime: article.date,
-      authors: ["https://cctv.fi"],
+      authors: ["https://cctv.fi/toimitus"],
       tags: article.tags,
       locale: "fi_FI",
       siteName: "CCTV.fi",
@@ -86,6 +86,7 @@ export default async function ArticlePage({ params }: Props) {
   const faqs = extractFAQs(article.content);
   const url = `https://cctv.fi/artikkelit/${slug}`;
   const articleLd = articleJsonLd(article, url);
+  const speakable = speakableJsonLd(url);
   const breadcrumb = breadcrumbJsonLd([
     { name: "CCTV.fi", url: "https://cctv.fi" },
     { name: "Artikkelit", url: "https://cctv.fi/artikkelit" },
@@ -96,12 +97,13 @@ export default async function ArticlePage({ params }: Props) {
     <div style={{ maxWidth: 800, margin: "0 auto", padding: "3rem 1.5rem" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakable) }} />
       {faqs.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }} />
       )}
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: "1.5rem", display: "flex", gap: 6 }}>
+      <nav style={{ fontSize: 13, color: "#6b7280", marginBottom: "1.5rem", display: "flex", gap: 6, flexWrap: "wrap" }}>
         <Link href="/" style={{ color: "#6b7280" }}>CCTV.fi</Link>
         <span>›</span>
         <Link href="/artikkelit" style={{ color: "#6b7280" }}>Artikkelit</Link>
@@ -112,17 +114,29 @@ export default async function ArticlePage({ params }: Props) {
       <div style={{ marginBottom: "1rem" }}>
         <CategoryBadge category={article.category} />
       </div>
+
       <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 900, lineHeight: 1.2, marginBottom: "1rem", color: "#f9fafb" }}>
         {article.title}
       </h1>
-      <p style={{ color: "#9ca3af", fontSize: 16, marginBottom: "1.5rem", lineHeight: 1.6 }}>
+
+      {/* E-E-A-T metadata */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", fontSize: 13, color: "#6b7280", marginBottom: "1.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid #1e293b" }}>
+        <Link href="/toimitus" style={{ color: "#9ca3af", display: "flex", alignItems: "center", gap: 4 }}>
+          ✍️ <span>{article.author}</span>
+        </Link>
+        <span>📅 Julkaistu {article.date}</span>
+        <span>⏱ {article.readTime} min lukuaika</span>
+        <span style={{ color: "#3b82f6" }}>✓ Asiantuntijatarkistettu</span>
+      </div>
+
+      {/* AI-excerpt highlight (Speakable) */}
+      <p className="article-excerpt" style={{
+        color: "#9ca3af", fontSize: 16, marginBottom: "2rem", lineHeight: 1.6,
+        background: "#111827", border: "1px solid #1e293b", borderRadius: 10,
+        padding: "1rem 1.25rem",
+      }}>
         {article.excerpt}
       </p>
-      <div style={{ display: "flex", gap: "1.5rem", fontSize: 13, color: "#6b7280", marginBottom: "2.5rem", borderBottom: "1px solid #1e293b", paddingBottom: "1.5rem" }}>
-        <span>✍️ {article.author}</span>
-        <span>📅 {article.date}</span>
-        <span>⏱ {article.readTime} min lukuaika</span>
-      </div>
 
       <div className="article-content">
         <MDXRemote source={article.content} components={mdxComponents} />
@@ -130,9 +144,28 @@ export default async function ArticlePage({ params }: Props) {
 
       {faqs.length > 0 && <FAQSection faqs={faqs} />}
 
-      {/* Related/CTA */}
-      <div style={{ marginTop: "3rem", padding: "1.5rem", background: "#1a2235", border: "1px solid #1e293b", borderRadius: 12 }}>
-        <p style={{ color: "#9ca3af", fontSize: 14, marginBottom: 0 }}>
+      {/* Tags */}
+      {article.tags.length > 0 && (
+        <div style={{ marginTop: "2rem", display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {article.tags.map((tag) => (
+            <span key={tag} style={{
+              background: "#111827", border: "1px solid #1e293b",
+              borderRadius: 6, padding: "4px 10px", fontSize: 12, color: "#6b7280",
+            }}>#{tag}</span>
+          ))}
+        </div>
+      )}
+
+      {/* Author box */}
+      <div style={{ marginTop: "3rem", background: "#1a2235", border: "1px solid #1e293b", borderRadius: 12, padding: "1.5rem" }}>
+        <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start", marginBottom: "0.75rem" }}>
+          <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg, #3b82f6, #06b6d4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>👤</div>
+          <div>
+            <Link href="/toimitus" style={{ fontWeight: 700, color: "#f9fafb", fontSize: 15 }}>Sami Kuja-Kanto</Link>
+            <p style={{ color: "#6b7280", fontSize: 13 }}>CCTV.fi päätoimittaja · 20+ vuotta kameravalvonnan asiantuntijana</p>
+          </div>
+        </div>
+        <p style={{ color: "#9ca3af", fontSize: 14, lineHeight: 1.6, marginBottom: "0.75rem" }}>
           Tarvitsetko ammattilaisapua kameravalvontaan?{" "}
           <a href="https://security.fi" style={{ color: "#3b82f6" }}>Security.fi:n asiantuntijat auttavat →</a>
         </p>

@@ -1,0 +1,84 @@
+---
+title: "Dahua DMSS -sovelluksen käyttöopas"
+slug: "dahua-dmss-kayttoopas"
+category: "kamerat"
+excerpt: "DMSS (Dahua Mobile Surveillance Software) on ilmainen mobiilisovellus Dahuan kameroiden etäkäyttöön. Tässä oppaassa käydään läpi asennuksen, kameran lisäämisen ja tärkeimmät ominaisuudet."
+date: "2026-06-04"
+readTime: 7
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["DMSS", "Dahua", "mobiilisovellus", "etäkäyttö", "iOS", "Android"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Dahua DMSS (Digital Mobile Surveillance System) on ilmainen mobiilisovellus Android ja iOS -laitteille Dahuan kameravalvontajärjestelmien etäkäyttöön. DMSS tukee jopa 64 laitetta, reaaliaikaista videota, tallenteiden katselua, AI-hälytyksiä ja kaksisuuntaista ääntä. Yhdistäminen tapahtuu QR-koodilla (P2P-pilvi) tai lähiverkossa suoraan IP-osoitteella.
+
+## Lataus ja asennus
+
+- **Android:** Google Play Store – "Dahua DMSS"
+- **iOS:** Apple App Store – "DMSS"
+- **Versio 2026:** DMSS v4.x (tarkista viimeisin versio sovelluskaupasta)
+
+Rekisteröinti: Luo Dahua-tili (sähköposti tai puhelinnumero). Tilin kautta P2P-yhteys ja pilvipohjainen varmuuskopio asetuksille.
+
+## Kameran lisääminen – 3 tapaa
+
+### Tapa 1: QR-koodi (suositeltu)
+1. Avaa DMSS → + ikoni
+2. Valitse "Scan QR Code"
+3. Skannaa kameran tai NVR:n takana oleva QR-koodi
+4. Anna salasana
+
+### Tapa 2: Lähiverkko (automaattinen haku)
+1. Liitä puhelin samaan WiFi-verkkoon kameran kanssa
+2. DMSS → + → "Same LAN"
+3. Sovellus löytää laitteet automaattisesti
+
+### Tapa 3: Manuaalinen IP
+1. DMSS → + → "Add manually" → "IP/Domain"
+2. Syötä IP-osoite, portti (37777), käyttäjätunnus, salasana
+
+## Tärkeimmät ominaisuudet
+
+### Reaaliaikainen katselu
+- Single/quad/9-screen näkymä
+- PTZ-ohjaus (panorointi, kallistus, zoom)
+- Snapshot ja videoklippi tallennukseen
+
+### Tallenteiden katselu
+- Aikajanakatselu NVR:ltä tai SD-kortilta
+- Tapahtumahaku (liike, AI-hälytys)
+- Lataus puhelimeen
+
+### AI-hälytykset
+- Push-ilmoitukset ihmis- tai ajoneuvoliikkeestä (WizSense-kameroissa)
+- Hälytysten hallinta per laite
+
+### Kaksisuuntainen ääni
+- Puhu kameran kaiuttimeen
+- Kuuntele kameran mikrofonia
+
+## P2P-pilvi vs. paikallinen yhteys
+
+| Tapa | Edut | Haitat |
+|------|------|--------|
+| P2P (pilvi) | Ei portaavauksia, helppoa | Viive 200–500 ms, tietosuoja? |
+| VPN + paikallinen | Turvallisin, nopea | Vaatii VPN-asetukset |
+| DDNS | Helppo ulkoyhteys | Porttiavaukseen riski |
+
+[Security.fi:n ohje turvalliseen etäkäyttöön](https://security.fi/oppaat/kameravalvonnan-etakaytto) suosittelee VPN-yhteyttä P2P-pilven sijaan.
+
+## Usein kysytyt kysymykset
+
+### Toimiiko DMSS kaikkien Dahua-kameroiden kanssa?
+
+Kyllä, DMSS toimii kaikkien Dahua IP-kameroiden ja NVR-tallentimien kanssa. Vanhemmat DVR-tallentimet (analogiset) toimivat myös. Kolmansien osapuolien ONVIF-kamerat voi lisätä, mutta AI-ominaisuudet eivät toimi niillä.
+
+### Voiko useampi käyttäjä katsella samaa kameraa?
+
+Kyllä. Jokaiselle käyttäjälle luodaan oma käyttäjätili NVR:ään tai kameraan. Samaan P2P-tiliin voi lisätä perheenjäseniä. Yhtäaikaisten katselujen määrä riippuu laitteesta (tyypillisesti 4–8 samanaikaista).
+
+### Onko DMSS turvallinen?
+
+P2P-yhteys menee Dahuan pilvipalvelinten kautta, mikä herättää tietosuojakysymyksiä. Salasanalla suojatut yhteydet ovat salattuja. Turvallisempaa on käyttää VPN + paikallinen IP ilman P2P-pilveä.

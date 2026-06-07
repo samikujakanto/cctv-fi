@@ -1,0 +1,92 @@
+---
+title: "Dahua DSS Pro opas – hallintaohjelmisto ammattikäyttöön"
+slug: "dahua-dss-pro-opas"
+category: "kamerat"
+excerpt: "Dahua DSS Pro on enterprise-tason kameravalvonnan hallintaohjelmisto suuriin kohteisiin. Se hallitsee tuhansia kameroita, tukee kasvojen tunnistusta, ANPR:ää ja integroituu kulunhallintaan."
+date: "2026-06-05"
+readTime: 9
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Dahua", "DSS Pro", "VMS", "hallintaohjelmisto", "enterprise"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Dahua DSS Professional on Dahuan enterprise-tason Video Management Software (VMS), joka tukee jopa 100 000 kameran hallintaa. Se integroituu kulunhallintaan, kasvojen tunnistukseen, ANPR:ään ja hälytinjärjestelmiin. DSS Pro vaatii palvelinasennuksen (Windows Server tai Linux) ja on lisensoitu kanavakohtaisesti. Pienemmille kohteille Dahua tarjoaa PCNVR:n ja SmartPSS:n ilmaiseksi.
+
+## DSS Pro vs. muut Dahua-ohjelmistot
+
+| Ohjelmisto | Kamerat | Käyttö | Hinta |
+|-----------|---------|--------|-------|
+| DMSS | 1–64 | Mobiili | Ilmainen |
+| SmartPSS | 1–64 | Toimisto | Ilmainen |
+| PCNVR | 1–64 | Toimisto | Ilmainen |
+| DSS Express | 64–256 | SMB | Edullinen |
+| **DSS Pro** | 256–100 000+ | Enterprise | Lisenssimaksu |
+
+## DSS Pro:n pääominaisuudet
+
+### Reaaliaikainen valvonta
+- Multi-screen layout jopa 256 kameran samanaikaiseen näyttöön
+- Karttatoiminto (e-map) – asemapiirros kameroista ja hälyttimistä
+- AI-hälytysten priorisointi ja hallinta
+
+### Tallenteiden haku
+- **AcuPick-integraatio:** hae ihmistä vaatteen värin, tyypin ja laukun perusteella
+- Aikajanalla tapahtumasuodatus (vain liiketunnistushetket)
+- Aikajaksojen vertailu vierekkäin
+
+### Kasvojen tunnistus
+- Henkilörekisterit (whitelist/blacklist)
+- Reaaliaikainen tunnistus ja hälytys
+- VIP-tunnistus (tunnetut asiakkaat)
+- **Huom:** GDPR-rajoitukset soveltuvat, katso kasvojentunnistusopas
+
+### ANPR / LPR
+- Rekisterikilpirekisterit
+- Reaaliaikainen lukeminen
+- Parkkihallin automaattiavaus
+- Musta/valkolista-hälytykset
+
+### Integraatiot
+- Kulunhallinta (Dahua ASC)
+- Hälytinjärjestelmät
+- POS-kassajärjestelmä
+- REST API kolmansille osapuolille
+
+## Tekninen arkkitehtuuri
+
+DSS Pro toimii asiakas-palvelin-arkkitehtuurilla:
+
+```
+Palvelin (Windows Server 2019/2022 tai Ubuntu 20.04)
+   └── DSS Pro -palvelu
+       ├── Tietokanta (PostgreSQL)
+       ├── Media-palvelin
+       └── AI-analytiikka-palvelin
+
+Asiakaskoneet (Windows)
+   └── DSS Pro Client
+```
+
+**Minimivaatimukset (100 kameraa):**
+- CPU: Intel Xeon 8-core
+- RAM: 32 GB
+- Tallennus: 1 TB SSD (ohjelmisto) + NAS (tallenteet)
+- Verkko: 1 Gbps
+
+[Security.fi:n DSS Pro -asennuspalvelu](https://security.fi/palvelut/vms-asennus) kattaa suunnittelun, asennuksen ja koulutuksen.
+
+## Usein kysytyt kysymykset
+
+### Onko DSS Pro ilmainen?
+
+DSS Pro -palvelinohjelmisto on ilmainen, mutta asiakaskäyttöliittymälisenssi on maksullinen kanavamäärän mukaan (tyypillisesti 5–15 €/kanava). SmartPSS ja PCNVR ovat täysin ilmaisia pienemmille asennuksille.
+
+### Toimiiko DSS Pro ilman internet-yhteyttä?
+
+Kyllä, täysin. DSS Pro toimii paikallisessa verkossa ilman internet-yhteyttä. Etäkäyttö vaatii VPN:n tai DDNS-konfiguraation.
+
+### Kuinka monta kameraa yksi DSS Pro -palvelin voi hallita?
+
+Yhdellä palvelimella 1 000–5 000 kameraa riippuen palvelimen suoritustehosta ja analytiikan määrästä. Suurimmissa asennuksissa käytetään hajautettua arkkitehtuuria useammalla palvelimella.

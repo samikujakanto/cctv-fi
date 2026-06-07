@@ -1,0 +1,78 @@
+---
+title: "Hikvision AcuSearch – älykäs tapahtumaetsintä"
+slug: "hikvision-acusearch"
+category: "kamerat"
+excerpt: "Hikvision AcuSearch mahdollistaa henkilön etsimisen valvontatallenteista ulkonäköpiirteiden – vaatteen värin, tyypin ja asusteiden – perusteella ilman kasvojentunnistusta."
+date: "2026-06-03"
+readTime: 7
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Hikvision", "AcuSearch", "tapahtumaetsintä", "AI", "metadata"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Hikvision AcuSearch on tekoälypohjainen tapahtumaetsintä, joka hakee henkilöitä valvontatallenteista ulkonäköattribuuttien perusteella: vaatteen väri, vaatetyyppi (takki, paita, hame), hattu, laukku, sukupuoli, ikäryhmä. AcuSearch ei käytä kasvojentunnistusta – se tunnistaa ulkonäköpiirteitä, mikä on GDPR-ystävällisempää. Etsintä satojen tuntien tallenteista voi valmistua minuuteissa.
+
+## Miten AcuSearch toimii?
+
+Kamera tai NVR tallentaa metadataa jokaisesta tunnistetusta henkilöstä:
+- Vaatteen yläosan väri (punainen, sininen, musta jne.)
+- Vaatteen alaosan väri
+- Vaatetyyppi (lyhythihainen, pitkähihainen, takki)
+- Hattu (kyllä/ei, väri)
+- Laukku (selkäreppu, käsilaukku, laukku kädessä)
+- Sukupuoli (arvio)
+- Ikäryhmä (lapsi, nuori, keski-ikäinen, vanhempi)
+
+Kun etsit henkilöä, valitset nämä attribuutit ja AcuSearch suodattaa kaikista tallenteista vain täsmäävät kohdat.
+
+## Ero kasvojentunnistukseen
+
+**AcuSearch:** Tunnistaa ulkonäön piirteitä → ei biometriikkaa → GDPR-ystävällisempi
+**Kasvojentunnistus:** Tunnistaa henkilön biometrisen profiilin → biometrista dataa → tiukemmat GDPR-rajoitukset
+
+AcuSearch ei rakenna rekisteriä henkilöistä – se on etsintätyökalu, ei tunnistusrekisteri.
+
+## Käyttökohteet
+
+**Rikostutkinta:**
+- Epäilty kuvattiin punainen takki päällä → hae kaikki punatakit tallenteilta kello 15–17
+
+**Kadonnut henkilö:**
+- Vanhusten hoivakodin asukas kadonnut → hae viimeisin havainto attribuuttien perusteella
+
+**Turvallisuuspoikkeama:**
+- Mistä epäilty tuli sisään? → seuraa liike kameralta kameralle attribuuttien avulla
+
+## Vaatimukset
+
+- AcuSense-kamera (DS-2CD2xxxG2 tai uudempi)
+- Yhteensopiva NVR (DS-7600NXI tai HikCentral-ohjelmisto)
+- Profile M metadatavirta tallentimeen
+
+## AcuSearch vs. Dahua AcuPick
+
+| Ominaisuus | Hikvision AcuSearch | Dahua AcuPick |
+|-----------|-------------------|--------------|
+| Attribuuttietsintä | ✅ | ✅ |
+| Vaatteen väri | ✅ | ✅ |
+| Kasvojen haku | ⚠️ (DeepinView-vaatii) | ⚠️ (WizMind-vaatii) |
+| Ajoneuvoetsintä | ✅ | ✅ |
+| VMS-integraatio | HikCentral | DSS Pro |
+
+[Security.fi:n opas tapahtumaetsintäominaisuuksien käyttöön](https://security.fi/oppaat/tapahtumaetsinta) kattaa sekä AcuSearchin että AcuPickin käytännön käytön.
+
+## Usein kysytyt kysymykset
+
+### Voiko AcuSearch etsiä useammasta kamerasta samanaikaisesti?
+
+Kyllä, HikCentral tai uudempi NVR mahdollistaa useiden kameroiden tallennehaun samanaikaisesti. Mitä enemmän kameroita ja tallenneaikaa, sitä kauemmin haku kestää – tyypillisesti sekunteja minuutteihin.
+
+### Toimiiko AcuSearch yöllä tai huonossa valaistuksessa?
+
+Metadata kerätään sekä päivä- että yötallenteista. Yöllä IR-kuvaus on mustavalkoinen, joten väriattribuutteja ei saada. AcuSense + ColorVu -yhdistelmäkameralla väritieto on saatavilla myös pimeässä.
+
+### Onko AcuSearch GDPR:n mukainen?
+
+Perusrakenteeltaan kyllä – AcuSearch ei luo pysyvää henkilörekisteriä eikä käytä biometriikkaa. Se on etsintätyökalu, jonka käytöstä pitää mainita tietosuojaselosteessa. Käyttö tulee rajata perusteltuihin tapauksiin.

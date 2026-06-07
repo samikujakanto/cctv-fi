@@ -1,0 +1,78 @@
+---
+title: "Kameravalvonnan kyberturvaopas"
+slug: "kameravalvonnan-kyberturvaopas"
+category: "oppaat"
+excerpt: "Kameravalvontajärjestelmät ovat kyberhyökkäysten kohde. Heikot salasanat, päivittämätön firmware ja avoimet portit ovat suurimmat riskit. Tässä oppaassa käydään läpi kyberturvallisuuden perusaskelet."
+date: "2026-05-30"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["kyberturvallisuus", "tietoturva", "kameravalvonta", "NIS2", "haavoittuvuus"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Kameravalvontakamerat ovat yleisimpiä IoT-laitteiden haavoittuvuuslöydöksiä. Suurimmat riskit ovat oletussalasanat (yli 60 % laitteista käyttää oletuksia vuoden jälkeen), päivittämätön firmware (tunnetut haavoittuvuudet), avoimet portit internetiin ja salaamaton liikenne. NIS2-direktiivi velvoittaa organisaatioita arvioimaan kameravalvontajärjestelmien kyberturvariskejä.
+
+## Yleisimmät hyökkäystavat
+
+### Oletussalasana-hyökkäys (credential stuffing)
+Lähes kaikilla kameroilla on oletussalasana. Mirai-botnet (2016) hyökkäsi Dahuan ja Hikvisionin kameroihin oletussalasanoilla ja kaatoi osan internetistä 1,1 Tbps DDoS-hyökkäyksellä.
+
+### Firmware-haavoittuvuudet
+CVE-tietokanta sisältää satoja kameravalvontalaitteiden haavoittuvuuksia. Päivittämätön firmware tarkoittaa tunnettuja aukkoja.
+
+### Avoin RTSP/HTTP internetiin
+Port 554 (RTSP) ja 80/443 (web-käyttöliittymä) avoimena internetiin = hakkerointiriski.
+
+### Man-in-the-Middle
+Salaamaton liikenne voidaan siepata. Erityisesti paikallisessa verkossa RTSP ilman TLS:ää.
+
+## Perussuojaukset – pakollinen lista
+
+### Vaihda oletussalasanat HETI
+- Jokaiselle kameralle yksilöllinen salasana (12+ merkkiä)
+- Käytä salasananhallintaa (Bitwarden, 1Password)
+- Poista käyttämättömät käyttäjätilit
+
+### Verkkosegmentointi (VLAN)
+Kameraverkko erilliseen VLANiin (ks. VLAN-opas). Kamerat eivät tarvitse pääsyä toimistoverkkoon.
+
+### Sulje avoimet portit
+- Estä kameroiden suora internet-pääsy palomuurilla
+- Käytä VPN etäkäyttöön (ei portforwardingia)
+- Estä UPnP kaikista laitteista
+
+### Firmware-päivitykset
+- Tarkista päivitykset kvartaaleittain
+- Tilaa tietoturvatiedotteet valmistajalta
+- Dokumentoi päivitykset (NIS2-vaatimus)
+
+### Salaa liikenne
+- Käytä HTTPS hallintakäyttöliittymässä
+- RTSP over TLS etäkäyttöön
+
+## Dahuan ja Hikvisionin turvallisuushistoria
+
+Molemmat valmistajat ovat olleet Yhdysvaltojen NDAA-listan kohteina tietoturvahuolien takia. EU:ssa molempia käytetään laajasti viranomaisillakin. Riskit liittyvät enemmän konfigurointiin kuin laitteisiin.
+
+Käytännön toimenpiteet samat molemmille:
+- Blokkaa kameroiden DNS-pyynnöt Kiinan palvelimille palomuurissa
+- Aseta kameraverkon liikenne vain sisäverkkoon
+- Älä käytä valmistajan pilvipalvelua jos GDPR on kriittinen
+
+[Security.fi:n NIS2-compliance-opas](https://security.fi/oppaat/nis2-vaatimukset) sisältää kyberturvallisuuden tarkistuslistan kameravalvontajärjestelmille.
+
+## Usein kysytyt kysymykset
+
+### Pitääkö kamera päivittää jos se toimii normaalisti?
+
+Kyllä. Toimiva laite voi silti sisältää tietoturva-aukon, jota hyökkääjä voi käyttää. Firmware-päivitykset korjaavat haavoittuvuuksia, vaikka kamera muuten toimisikin hyvin.
+
+### Voiko kamera lähettää dataa Kiinaan ilman suostumustaani?
+
+Teoriassa mahdollista jos kamera on konfiguroitu käyttämään valmistajan pilvipalvelua. Käytännössä: estä kameraverkon ulkoinen liikenne palomuurissa (paitsi NTP ja firmware-päivitykset). Tarkista Wireshark-analyysilla jos epäilet.
+
+### Onko Dahua tai Hikvision vaarallinen EU:ssa?
+
+Ei ole näyttöä datavuodoista EU:ssa. Riskit liittyvät konfigurointiin, ei laitteisiin. Asianmukaisesti eristetty ja konfiguroitu laite on turvallinen. Kriittisimmissä kohteissa (esim. turvallisuusluokiteltu infra) voidaan harkita eurooppalaista valmistajaa (Axis, Bosch).

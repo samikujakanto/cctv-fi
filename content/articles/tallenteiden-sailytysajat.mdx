@@ -1,0 +1,69 @@
+---
+title: "Kameravalvonnan tallenteiden säilytysajat"
+slug: "tallenteiden-sailytysajat"
+category: "lainsäädäntö"
+excerpt: "GDPR:n minimaalisuusperiaate velvoittaa poistamaan kameravalvontatallenteet heti kun niiden käyttötarkoitus on täyttynyt. Toimialakohtaiset suositukset vaihtelevat 7 päivästä 90 päivään."
+date: "2026-06-05"
+readTime: 6
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["säilytysaika", "GDPR", "tallenteet", "tietosuoja"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+GDPR ei määrää tarkkaa tallenteiden säilytysaikaa, mutta minimaalisuusperiaate edellyttää poistamista heti kun tarkoitus on täyttynyt. Käytännössä suositellut ajat ovat: kauppa ja toimisto 14–30 päivää, taloyhtiöt 14–21 päivää, pankit ja finanssiala 30–90 päivää, teollisuus 30–60 päivää. Automaattipoisto on pakollinen käytännön vaatimus.
+
+## GDPR:n minimaalisuusperiaate
+
+GDPR:n 5. artiklan e-kohta – säilytyksen rajoittaminen – edellyttää, että henkilötietoja ei saa säilyttää pidempään kuin on tarpeen niiden käsittelyn tarkoituksia varten.
+
+Kameravalvonnassa tämä tarkoittaa: kun tallenteessa ei enää ole mitään, johon rekisterinpitäjä tarvitsee pääsyä, se täytyy poistaa.
+
+## Toimialakohtaiset suositukset
+
+| Toimiala | Suositeltu säilytysaika | Peruste |
+|----------|------------------------|---------|
+| Vähittäiskauppa | 14–30 päivää | Anastukset havaitaan yleensä 1–2 viikossa |
+| Taloyhtiö | 14–21 päivää | Riittää tavanomaisten tapausten selvittämiseen |
+| Toimisto | 14–30 päivää | Omaisuusrikokset, kulunvalvonta |
+| Teollisuus | 30–60 päivää | Prosessivahingot voivat ilmetä myöhemmin |
+| Pankki ja finanssiala | 30–90 päivää | Tiukemmat regulatoriset vaatimukset |
+| Kriittinen infrastruktuuri | 30–90 päivää | NIS2-velvoitteet |
+| Terveydenhuolto | 30 päivää | Potilasturvallisuus, tarkka GDPR-tulkinta |
+
+## Pidempi säilytys – milloin on peruste?
+
+Tallenteita voidaan säilyttää pidempään, jos:
+
+- **Rikostutkinta on käynnissä** – poliisi voi pyytää tallenteiden säilyttämistä tutkinnan ajaksi
+- **Vahingonkorvausvaatimus** on vireillä tai odotettavissa
+- **Regulatorinen vaatimus** edellyttää pidempää aikaa (esim. finanssiala)
+- **Katoamistapauksessa** henkilöä etsitään aktiivisesti
+
+Pidempi säilytys täytyy aina **dokumentoida** – kirjaa syy ja arvioi tilanne uudelleen säännöllisesti.
+
+## Automaattipoisto – tekninen vaatimus
+
+Manuaalinen poisto ei käytännössä toimi. Jokainen NVR-järjestelmä tukee automaattista ylikirjoitusta:
+
+- **Kiintolevyn täytyttyä** – vanhin materiaali poistetaan automaattisesti (oletusasetus)
+- **Ajanperusteinen** – tallenteet poistetaan X päivän jälkeen (suositellaan)
+
+Suositellaan ajanperusteinen poisto, koska levyn täyttyminen voi poistaa tärkeää materiaalia juuri kriittiseltä ajanjaksolta.
+
+[Security.fi:n tekninen opas kameravalvontajärjestelmien konfigurointiin](https://security.fi/oppaat/nvr-konfigurointi) sisältää NVR-kohtaiset ohjeet automaattipoiston asettamiseen.
+
+## Usein kysytyt kysymykset
+
+### Voiko tallenteet säilyttää ikuisesti?
+
+Ei. GDPR kieltää tämän nimenomaisesti. Tallenteet, joille ei ole enää käyttötarkoitusta, on poistettava. Jos haluat säilyttää tietyn tapahtuman dokumentointia pitkään, tallenna vain se yksittäinen klippi ja dokumentoi peruste säilytykselle.
+
+### Onko eri säilytysaika eri kameroille sallittua?
+
+Kyllä. Parkkipaikan kamera voidaan asettaa 7 päivään (tavanomainen riski), kun taas kassaalueen kamera pidetään 30 päivää (suurempi anastusriski). Tietosuojaselosteessa on ilmoitettava käytetyt ajat selkeästi.
+
+### Mitä tapahtuu jos säilytysaika ylitetään vahingossa?
+
+Ensisijainen toimenpide on poistaa tallenteet heti kun virhe havaitaan. Jos kyse on merkittävästä loukkauksesta (pitkä säilytysaika, suuri joukko henkilöitä), se voidaan joutua raportoimaan tietosuojavaltuutetulle.

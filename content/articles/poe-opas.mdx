@@ -1,0 +1,78 @@
+---
+title: "PoE-opas – virransyöttö verkkokaapelia pitkin"
+slug: "poe-opas"
+category: "oppaat"
+excerpt: "PoE (Power over Ethernet) syöttää kameravalvontakameroiden virran verkkokaapelia pitkin ilman erillistä virtajohtoa. IEEE 802.3af tarjoaa 15W, 802.3at 30W ja 802.3bt 60-90W per portti."
+date: "2026-06-04"
+readTime: 8
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["PoE", "verkko", "kamera", "asennus", "IEEE 802.3"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+PoE (Power over Ethernet) on tekniikka, jolla sama CAT5e/CAT6-verkkokaapeli siirtää sekä dataa että sähkövirtaa. IP-valvontakamerat saavat virran PoE-kytkimeltä tai -injektorilta ilman erillistä pistoketta. IEEE 802.3af antaa 15,4 W, 802.3at 30 W ja uusin 802.3bt jopa 90 W per portti. Lähes kaikki modernit IP-valvontakamerat tukevat PoE-standardia.
+
+## PoE-standardit vertailussa
+
+| Standardi | Maksimiteho | Tyypillinen käyttö |
+|-----------|------------|-------------------|
+| IEEE 802.3af (PoE) | 15,4 W | Perus-IP-kamerat, VoIP |
+| IEEE 802.3at (PoE+) | 30 W | PTZ-kamerat, Full Color -kamerat |
+| IEEE 802.3bt (PoE++) | 60–90 W | PTZ + lämmitys, access pointit |
+| Passive PoE | Vaihtelee | Halfdup, ei IEEE-standardin mukainen |
+
+Suurin osa kiinteistä valvontakameroista toimii 802.3af:llä (alle 12,95 W). PTZ-kamerat ja Full Color -mallit voivat vaatia PoE+:aa.
+
+## PoE-laitteistovaihtoehdot
+
+### PoE-kytkin (suositeltu)
+Kytkin, jossa on sisäänrakennettu PoE-tuki jokaiselle portille. Esimerkiksi 8-porttinen Dahua PoE-kytkin (DH-S1500N-8P4S-L) tarjoaa 8 PoE-porttia + 4 uplink-porttia. Hinta ~100–200 €.
+
+**Etuja:**
+- Yksinkertainen asennus
+- Keskitetty hallinta
+- Usein NVR-tallentimiin integroitu
+
+### PoE-injektori (midspan)
+Erillinen laite, joka lisää PoE-virran yhteen porttiin. Sopii kun käytössä on tavallinen kytkin ilman PoE-tukea.
+
+### NVR PoE-porteilla
+Monet Dahua- ja Hikvision-NVR-tallentimet sisältävät 4–16 PoE-porttia suoraan laitteessa. Yksinkertaisin ratkaisu pienissä asennuksissa.
+
+## Kaapelipituudet ja rajoitukset
+
+IEEE 802.3 -standardi määrittelee:
+- **Maksimipituus:** 100 metriä CAT5e tai parempi
+- **Virran häviö:** Pitkillä matkoilla virta heikkenee – 90 m:n kaapelissa 30 W:n lähteestä kameralle saattaa tulla vain 25 W
+- **CAT5e minimissään**, CAT6 suositellaan yli 70 m:n asennuksissa
+
+**Pitkiin matkoihin:** PoE-laajennuslaitteet (PoE extender) voivat pidentää etäisyyttä 200–500 metriin.
+
+## PoE-budjetti – näin lasket
+
+PoE-kytkimen tai NVR:n **kokonaisbudjetti** on kriittinen. Esimerkki:
+
+- 8-kamerainen järjestelmä
+- Jokainen kamera kuluttaa max 12 W
+- Yhteiskulutus: 8 × 12 W = 96 W
+- Tarvitaan kytkin jonka PoE-budjetti on **≥ 120 W** (20 % varaus)
+
+Monet halvat 8-porttiset PoE-kytkimet ilmoittavat max 15,4 W/portti, mutta kokonaisbudjetti on vain 65–80 W → ei riitä 8 kameralle samanaikaisesti.
+
+[Security.fi:n asentajat](https://security.fi/oppaat/poe-asennus) mitoittavat PoE-budjetin aina kohteen mukaan.
+
+## Usein kysytyt kysymykset
+
+### Toimiiko PoE kaikkien IP-kameroiden kanssa?
+
+Lähes kaikkien modernien IP-kameroiden kanssa kyllä. Kamera neuvottelee kytkimen kanssa tarvitsemansa tehon (IEEE 802.3-standardi). Vanhemmat kamerat voivat käyttää ns. "passive PoE":ta, joka ei ole yhteensopiva standardi-PoE-laitteiden kanssa – tarkista kameran tuotekortti.
+
+### Voinko käyttää tavallista verkkokytkintä ja lisätä PoE:n erikseen?
+
+Kyllä, PoE-injektori lisätään kytkimen ja kameran väliin. Halvempi ratkaisu yksittäiseen kameraan, mutta ei skaalaudu hyvin. Yli 4 kameran asennuksissa PoE-kytkin on kustannustehokkaampi.
+
+### Tarvitseeko PoE-kaapelointi erillisen sähköasentajan?
+
+Ei. CAT5e/CAT6-kaapelointi on heikkovirtakaapelointia, jonka saa asentaa ilman sähköasentajan pätevyyttä. Kuitenkin CAT6-kaapelin vetäminen rakenteissa (seinät, katot) voi vaatia rakennuslupaa taloyhtiössä.

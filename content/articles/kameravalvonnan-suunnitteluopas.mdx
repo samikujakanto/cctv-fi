@@ -1,0 +1,91 @@
+---
+title: "Kameravalvonnan suunnitteluopas – näin aloitat projektin"
+slug: "kameravalvonnan-suunnitteluopas"
+category: "oppaat"
+excerpt: "Kameravalvontaprojekti onnistuu kun suunnittelu tehdään ennen hankintaa. Tässä oppaassa käydään läpi tarvekartoitus, kameratyypit, tallennin, budjetti ja ylläpito vaihe vaiheelta."
+date: "2026-05-31"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["suunnittelu", "projekti", "kameravalvonta", "budjetti", "asennus"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Kameravalvontaprojektin suunnittelussa edetään viidessä vaiheessa: (1) tarvekartoitus ja riskianalyysi, (2) kameratyyppien valinta kohteen mukaan, (3) tallentimen ja tallennustilan mitoitus, (4) verkkoinfrastruktuurin suunnittelu, (5) ylläpidon ja budjetin arviointi. Tyypillinen pienyritysten budjetti 6–12 kameralla on 2 000–8 000 €, taloyhtiöille 1 500–5 000 €.
+
+## Vaihe 1: Tarvekartoitus
+
+Ennen kuin ostat mitään, vastaa näihin kysymyksiin:
+
+**Mitä haluat saavuttaa?**
+- Rikoksen ehkäisy (pelote) → näkyviä kameroita sisäänkäynneille
+- Rikoksen selvittäminen (tallenne) → korkealaatuinen tallennusjärjestelmä
+- Henkilöstöturvallisuus → kattava sisäinen valvonta
+- Prosessiturvallisuus → teollisuuskamerat
+
+**Mitkä alueet?**
+Listaa jokainen valvottava kohde: sisäänkäynnit, parkkipaikka, varasto, kassa, käytävät.
+
+**Lainsäädäntö ensin:**
+Tarkista LYTP-velvoitteet (yt-neuvottelu työnantajalla), GDPR-vaatimukset (tietosuojaseloste), mahdolliset taloyhtiökohtaiset rajoitukset.
+
+## Vaihe 2: Kameratyyppien valinta
+
+| Kohde | Suositeltava kameratyyppi |
+|-------|--------------------------|
+| Sisäänkäynti | 4 MP dome, WDR, 2,8 mm |
+| Parkkipaikka | 4–8 MP bullet, IR 30–50 m |
+| Pitkä käytävä | 4 MP, 4–6 mm |
+| Kassakone | 4 MP dome, 2,8 mm, tarkka WDR |
+| Ulko-ovi pimeässä | Full Color tai ColorVu |
+| Varastoriski | TiOC tai vastaava aktiivipelote |
+| LPR | Erillinen ANPR-kamera |
+
+## Vaihe 3: Tallentimen mitoitus
+
+NVR-tallentimen valintaperusteet:
+- **Kanavamäärä:** Kameroita + 30 % laajennus
+- **AI-tuki:** WizSense/AcuSense vaatii yhteensopivan NVR:n
+- **PoE-portit:** Helpoin kaapelointi
+- **Kiintolevy:** Katso tallennustilan laskentaopas
+
+## Vaihe 4: Verkkoinfrastruktuuri
+
+- CAT6-kaapelointi kaikille kameroille (100 m max)
+- VLAN-segmentointi kameraverkolle (ks. VLAN-opas)
+- PoE-kytkin tai NVR:n sisäiset PoE-portit
+- UPS-virransyöttö tallentimelle (sähkökatkosilta)
+
+## Vaihe 5: Budjetti
+
+**Taloyhtiö (8 kameraa, perusjärjestelmä):**
+- Kamerat 8 × 180 € = 1 440 €
+- NVR 4 TB = 450 €
+- Kaapelointi + asennustarvikkeet = 300 €
+- Asennus = 600 €
+- **Yhteensä n. 2 800 €**
+
+**Pienyrittäjä (12 kameraa, AI-analytiikka):**
+- Kamerat 12 × 250 € = 3 000 €
+- AI-NVR 8 TB = 700 €
+- Verkko + asennus = 1 500 €
+- **Yhteensä n. 5 200 €**
+
+Vuosihuolto ja firmware-päivitykset: 200–500 € vuodessa.
+
+[Security.fi tarjoaa ilmaisen kohdekohtaisen suunnitelman](https://security.fi/ota-yhteytta) kameravalvontaprojektille.
+
+## Usein kysytyt kysymykset
+
+### Kannattaako ostaa valmis kameravalvontapaketti vai koota itse?
+
+Valmispaketti sopii yksinkertaisiin kohteisiin – saat yhteensopivat laitteet halvemmalla. Itse koottu järjestelmä on parempi kun tarvitaan erityisominaisuuksia (AI, LPR, integraatio muihin järjestelmiin). Asennusliikkeen kautta tehdyn projektin eduksi lasketaan myös takuu ja tuki.
+
+### Kuinka kauan kameravalvontajärjestelmä kestää?
+
+Hyvin ylläpidetty IP-kamerajärjestelmä kestää 10–15 vuotta. Kamerat ovat kestäviä, mutta NVR-tallennin ja kiintolevyt voivat vaatia vaihtoa 5–7 vuoden välein. Firmware-päivityksillä pidennetään käyttöikää ja korjataan tietoturva-aukkoja.
+
+### Voinko asentaa kameravalvonnan itse?
+
+Pienet järjestelmät (2–4 kameraa, PoE NVR) ovat DIY-asennettavia. Isommissa kohteissa ammattiasennuksesta saa takuun, asianmukaisen kaapeloinnin ja konfiguroinnin. Ammattiasennuksen laatu näkyy myös vakuutustilanteessa – dokumentoidusta asennuksesta on helpompi esittää todiste.

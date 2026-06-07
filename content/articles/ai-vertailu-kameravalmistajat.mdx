@@ -1,0 +1,111 @@
+---
+title: "AI-analytiikan vertailu: Dahua vs Hikvision vs Axis 2026"
+slug: "ai-vertailu-kameravalmistajat"
+category: "tekoäly"
+excerpt: "Vertailemme kolmen johtavan kameravalmistajan tekoälyanalytiikan: Dahua WizMind, Hikvision AcuSense ja Axis ARTPEC. Algoritmit, tarkkuus, hinnat ja käyttökohteet 2026."
+date: "2026-06-06"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["tekoäly", "AI-analytiikka", "Dahua", "Hikvision", "Axis", "WizMind", "AcuSense", "ARTPEC"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Dahua WizMind, Hikvision AcuSense ja Axis ARTPEC ovat kolme johtavaa AI-analytiikkaplatformia kameravalvonnassa. Kaikki kolme pystyvät luotettavaan ihminen/ajoneuvo-erotteluun ja vähentävät turhia hälytyksiä yli 90 % verrattuna perinteiseen liiketunnistukseen. Axis ARTPEC on korkealaatusempi mutta selvästi kalliimpi; Hikvision ja Dahua tarjoavat parhaan hinta-laatu-suhteen massatuotantokohteisiin.
+
+## AI-analytiikka kameravalvonnassa – taustaa
+
+Perinteinen liiketunnistus on yksinkertainen pikseliherkkyysalgoritmi: kun pikselit muuttuvat, syntyy hälytys. Tämä tarkoittaa satoja turhia hälytyksiä tuulessa heiluvista puista, sateesta, auringonvalon muutoksista tai hyönteisistä, jotka lentävät linssin edestä.
+
+Syväoppimispohjainen AI-analytiikka muuttaa tämän: kamera on opetettu miljoonia kuvia sisältävällä tietoaineistolla tunnistamaan, onko liikkuva kohde ihminen, ajoneuvo, eläin vai muuta. Tämä vähentää turhia hälytyksiä radikaalisti – Security.fi:n asentajien kokemusten mukaan jopa 90–98 % väheneminen verrattuna perinteiseen PIR:ään tai pikseliherkkyysalgoritmiin.
+
+AI-analytiikka voidaan toteuttaa kolmella tasolla:
+1. **Edge AI** (kamerassa): Laskenta tapahtuu kameran prosessorissa
+2. **NVR-AI** (tallentimessa): NVR käsittelee useiden kameroiden dataa
+3. **Server AI** (palvelimessa): Erillinen analytiikkapalvelin käsittelee kaikki virrat
+
+## Dahua WizMind
+
+WizMind on Dahuan kattobrändi, jonka alle kuuluu useita analytiikkamoduuleja:
+
+**SMD Plus (Smart Motion Detection Plus)**
+Perustasoinen ihminen/ajoneuvo-erottelu. Toimii kaikissa WizMind-kameroissa. Hälytys triggeröityy vain, kun tunnistettu kohde on ihminen tai ajoneuvo. Tarkkuus: noin 95–97 % oikeissa olosuhteissa.
+
+**Perimeter Protection**
+Virtuaalinen aitatekniikka: määritä vyöhykkeet ja toimintasuunnat. Hälyttää, kun ihminen tai ajoneuvo ylittää määritetyn linjan oikeasta suunnasta. Käyttökohteet: aidan ylittäminen, lastausalueen valvonta.
+
+**Face Recognition**
+Kasvojentunnistus WizMind-kameran tai NVR:n kautta. Tukee mustia ja valkoisia listoja. Tarkkuus Dahuan ilmoittamana: yli 99 % tunnistetuilla kasvoilla hyvässä valaistuksessa.
+
+**ANPR (Automatic Number Plate Recognition)**
+Rekisterikilpitunnistus. Tarvitaan erikoisoptikka ja riittävä resoluutio. Suomenkielisten kilpien tunnistus toimii hyvin H.265+ -koodatulla 4MP- tai 8MP-kameralla.
+
+**WizMind-kameroiden hintaesimerkki:**
+- 4MP WizMind buletti (SMD Plus): 100–180 €
+- 4MP Face Recognition -kamera: 300–500 €
+- 4K WizMind PTZ: 500–900 €
+
+## Hikvision AcuSense
+
+AcuSense on Hikvisionin vastaava AI-platform, joka on tuotu markkinoille 2019 ja siitä lähtien laajentunut kattamaan lähes koko tuoteportfolion.
+
+**AcuSense-tekniikan ydin**
+Hikvision käyttää omaa DNN (Deep Neural Network) -arkkitehtuuria kameran sisäisessä prosessorissa. Kamera luokittelee jokaisen liiketapahtuman reaaliajassa ihmiseksi, ajoneuvoksi tai "muuksi". Hälytystieto välitetään NVR:lle tai suoraan käyttäjälle push-ilmoituksena.
+
+**Lisäanalytiikka:**
+- **Intrusion Detection**: Tunkeutumisvyöhyke
+- **Line Crossing**: Viivan ylitystunnistus
+- **Region Entrance/Exit**: Alueen sisään/uloskulku
+- **Loitering Detection**: Poikkeavan pitkä oleskelu alueella
+- **Unattended Baggage**: Jätetyn tavaran tunnistus (lentokentät, julkiset tilat)
+
+**DeepInMind NVR (iDS-7716NXI)**
+Hikvisionin tehokkain AI-NVR, joka tekee GPU-kiihdytettyä analytiikkaa 16 kameran streamista samanaikaisesti. Kasvojentunnistusnopeus: 10 tunnistusta sekunnissa. Musta/valkolistojen ylläpito: jopa 50 000 kasvoa.
+
+**AcuSense-kameroiden hintaesimerkki:**
+- 4MP AcuSense buletti: 80–130 €
+- 4MP AcuSense Dome (sisäkäyttö): 70–110 €
+- 6MP AcuSense torni: 140–200 €
+
+## Axis ARTPEC
+
+ARTPEC (Advanced Real-Time Processing Engine for Computing) on Axiksen oma prosessorisarja, jonka seitsemäs versio (ARTPEC-8) julkaistiin 2022.
+
+**Axis Camera Application Platform (ACAP)**
+ARTPEC:n erityisvoima on avoin sovellusplatform: kolmannen osapuolen kehittäjät voivat kirjoittaa omia analytiikkasovelluksia ARTPEC-prosessorille. Tällä hetkellä ACAP-sovelluskaupassa on yli 70 sovellusta eri valmistajilta.
+
+**Axis Object Analytics**
+Sisäänrakennettu AI-analytiikka kaikissa ARTPEC-7/8 -kameroissa. Tunnistaa ihmiset, ajoneuvot, moottoripyörät ja polkupyörät. Tukee virtuaaliaitoja, vyöhykkeisiin astumista ja suuntasuodatusta.
+
+**ARTPEC vs. kiinalaisvalmistajat:**
+- Axis käyttää ARTPEC-prosessoria, joka on suunniteltu erityisesti kuvanlaadun ja analytiikan yhdistämiseen
+- Parempi suorituskyky haastavissa olosuhteissa (kova kontrasti, sumuverhous)
+- ISO 27001 -sertifioitu tietoturva, avoin arkkitehtuuri
+- Selvästi kalliimpi: vastaava 4MP Axis-kamera maksaa 300–500 € vs. Hikvision 80–150 €
+
+## Suorituskykyvertailu
+
+| Ominaisuus | Dahua WizMind | Hikvision AcuSense | Axis ARTPEC-8 |
+|---|---|---|---|
+| Ihminen/ajoneuvo | 95–97 % | 95–98 % | 97–99 % |
+| Kasvojentunnistus | Kyllä (lisenssi) | Kyllä (lisenssi) | 3. osa puoli |
+| ANPR | Kyllä | Kyllä | 3. osapuoli |
+| Avoin API | Kyllä | Rajoitetusti | Kyllä (ACAP) |
+| Hinta (4MP) | 100–180 € | 80–150 € | 300–500 € |
+
+Security.fi suosittelee: Dahua ja Hikvision kustannustehokkaisiin massaprojekteihin, Axis premium-kohteisiin joissa vaaditaan avoin arkkitehtuuri ja korkein mahdollinen analytiikan tarkkuus.
+
+## Usein kysytyt kysymykset
+
+### Onko AI-analytiikka lainmukaista Suomessa?
+
+AI-analytiikka kameravalvonnassa on lainmukaista Suomessa, kun se täyttää GDPR:n ja tietosuojalain (1050/2018) vaatimukset. Kasvojentunnistus on erityisasemassa: se käsittelee biometrisia tietoja, joka on GDPR:n 9 artiklassa lueteltu erityisen arkaluonteinen tietotyyppi. Kasvojentunnistuksen käyttö on sallittu vain erityisin perustein (suostumus, tärkeä yleinen etu tai julkinen turvallisuus). Anonyymi analytiikka – kuten kävijälaskenta tai ajoneuvolaskenta ilman henkilötietojen tallentamista – ei kuulu GDPR:n henkilötietokäsittelyn piiriin. Suosittelemme konsultoimaan tietosuojavaltuutettua ennen kasvojentunnistuksen käyttöönottoa.
+
+### Mikä on tarkin AI-analytiikka pimeässä?
+
+Yöolosuhteissa AI-analytiikan tarkkuus riippuu ensisijaisesti kuvanlaadusta eikä AI-algoritmista. Heikko kuvanlaatu (kohinainen, epätarkka kuva) johtaa heikompaan tunnistukseen riippumatta algoritmista. Pimeässä paras tulos saadaan ColorVu- tai WizColor-kameroilla (värikuva pimeässä), joissa kuvanlaatu on korkea myös yöllä. Termisten kameroiden AI-analytiikka toimii parhaiten perimetrisuojauksessa, koska lämpökuva on tasalaatuinen valaistuksesta riippumatta. Axis ARTPEC-prosessori tuottaa parhaan kuvanlaadun, mutta Hikvision AcuSense ColorVu -yhdistelmä on kustannustehokkaampana erittäin hyvä vaihtoehto.
+
+### Tarvitseeko AI-analytiikka jatkuvan internetyhteyden?
+
+Ei. Edge AI -analytiikka tapahtuu kameran tai NVR:n prosessorissa eikä vaadi internet-yhteyttä. Kaikki kolme vertailemaamme platformia (WizMind, AcuSense, ARTPEC) toteuttavat analytiikan paikallisesti laitteessa. Internet-yhteyttä tarvitaan vain push-ilmoitusten lähettämiseen älypuhelimeen tai pilvipalveluihin synkronointiin. Tämä on tärkeä etu verrattuna pilvipohjaiseen analytiikkaan: paikallinen analytiikka toimii vaikka internet-yhteys katkeaisi, eikä henkilötieto liiku internettiin.

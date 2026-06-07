@@ -1,0 +1,83 @@
+---
+title: "People Counting – kävijälaskenta kameravalvonnalla"
+slug: "people-counting-kameravalvonta"
+category: "tekoäly"
+excerpt: "Kävijälaskenta kameravalvonnalla mahdollistaa liiketilojen asiakasmäärän, huipputuntien ja pinta-alatehokkuuden analysoinnin. Moderni AI-pohjainen people counting on yli 95 % tarkka."
+date: "2026-05-29"
+readTime: 8
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["people counting", "kävijälaskenta", "tekoäly", "kauppa", "analytiikka"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+People Counting on kameravalvontaan integroitu tekoälyominaisuus, joka laskee sisään- ja uloskäyvät henkilöt automaattisesti. Moderni AI-pohjainen kävijälaskenta saavuttaa yli 95 % tarkkuuden optimaalisesti asennetuilla kameroilla. Teknologia käyttää ylhäältä kuvattua videovirtaa ja neuroverkkoja henkilöiden tunnistamiseen ilman biometrisiä tietoja – GDPR-yhteensopiva anonymisointi on sisäänrakennettu.
+
+## Miten people counting toimii?
+
+Kamera asennetaan sisäänkäynnin yläpuolelle kuvaamaan alaspäin. Algoritmi:
+
+1. Tunnistaa jokaisen ihmissiluetin videokuvassa
+2. Seuraa liikkeen suuntaa (sisään/ulos)
+3. Laskee kertymän reaaliajassa
+4. Lähettää tiedon tallentimelle tai pilvipalveluun
+
+Tärkeää: people counting laskee siluetin – ei tunnista henkilöitä. Biometrisia tietoja ei käytetä → GDPR-turvallinen.
+
+## Käyttökohteet
+
+### Vähittäiskauppa
+- Konversiasuhde (kävijät vs. ostajat)
+- Huipputuntien tunnistaminen → henkilöstösuunnittelu
+- Kampanjoiden tehokkuuden mittaaminen (kävijäpiikki vs. normaali)
+- Myymälän layout-optimointi
+
+### Ostoskeskus
+- Kävijävirtojen analysointi käytävittäin
+- Tyhjä vs. ruuhkainen aika per alue
+- Vuokralaisten kävijämääräraportointi
+
+### Julkiset tilat ja liikenne
+- Joukkoliikenteen kapasiteettisuunnittelu
+- Museoiden ja tapahtumien kävijälaskenta
+- Rakennusten evakuointisuunnittelu
+
+### Turvallisuus ja NIS2
+- Kapasiteettirajan valvonta (max henkilömäärä)
+- Palohälytystilanteen evakuoinnin seuranta
+
+## Tekniset vaatimukset
+
+**Kamera:** Ylhäältä kuvaava fisheye tai erillinen people counting -kamera
+- Dahuan erikoiskamerat: IPC-HDW8341X-3D (3D stereo, korkein tarkkuus)
+- Hikvision: DS-2CD3D45G2-IS (3D Time of Flight)
+- Perinteiset dome-kamerat toimivat myös, tarkkuus n. 90–93 %
+
+**Asennuskorkeus:** 2,5–4 m sisäänkäynnin yläpuolella
+**Kuvakulma:** Suoraan alaspäin, kattaen koko sisäänkäynnin leveys
+
+## Tarkkuustasot
+
+| Menetelmä | Tarkkuus | Hinta |
+|-----------|----------|-------|
+| 2D video AI | 92–95 % | Edullisin |
+| Stereo 3D kamera | 97–99 % | Kohtalainen |
+| ToF (Time of Flight) | 98–99,5 % | Kallein |
+| IR-aisa (perinteinen) | 85–92 % | Edullinen, ei kuvaa |
+
+[Security.fi:n analytiikkapalvelu](https://security.fi/palvelut/kameraanalytiikka) sisältää people counting -raportoinnin pilvipalveluna.
+
+## Usein kysytyt kysymykset
+
+### Onko people counting GDPR-vaatimusten mukainen?
+
+Kyllä, kun se toteutetaan anonymisoidusti. People counting laskee henkilösiluetteja eikä tallenna biometrisia tietoja. Käytännössä kamera ei erota henkilöitä toisistaan. Tietosuojaselosteessa tulee mainita kävijälaskenta osana kameravalvontatietoja.
+
+### Mikä vaikuttaa laskurin tarkkuuteen?
+
+Suurimmat tekijät: asennuskorkeus ja -kulma (optimaalisesti suoraan alas), valaistus (tasainen, ei varjoja), ihmisten liikkumistapa (ryhmät laskureissa aina haasteellisia). Ruuhkahuipuissa 3D-kamera on selkeästi 2D-kameraa tarkempi.
+
+### Voidaanko people counting integroida kassajärjestelmään?
+
+Kyllä. Dahua, Hikvision ja monet VMS-ohjelmistot tarjoavat API-rajapinnan, josta kävijämäärä voidaan viedä BI-järjestelmiin, kassaohjelmistoihin tai pilvipalveluihin reaaliaikaisesti.

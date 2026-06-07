@@ -1,0 +1,101 @@
+---
+title: "ONVIF-opas – laitteiden yhteensopivuus kameravalvonnassa"
+slug: "onvif-opas"
+category: "oppaat"
+excerpt: "ONVIF-standardi varmistaa eri valmistajien kameravalvontalaitteiden yhteensopivuuden. Tämä opas selittää ONVIF-profiilit, Device Discoveryn ja käytännön rajoitukset."
+date: "2026-06-03"
+readTime: 9
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["ONVIF", "yhteensopivuus", "kameravalvonta", "standardi", "IP-kamerat"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+ONVIF (Open Network Video Interface Forum) on alan standardi, joka mahdollistaa eri valmistajien kameravalvontalaitteiden yhteensopivuuden. ONVIF Profile S kattaa perus-IP-videovirrat, Profile G tallentimen, Profile T H.265-videovirrat ja metadatan. Käytännössä ONVIF-yhteensopivuus ei aina tarkoita täydellistä toimivuutta – valmistajan omaa ekosysteemiä suositellaan aina kun mahdollista.
+
+## Mikä on ONVIF?
+
+ONVIF (Open Network Video Interface Forum) perustettiin 2008 Axis Communications, Bosch Security Systems ja Sony Corporation toimesta. Tavoitteena oli luoda avoin standardi IP-kameravalvontalaitteiden väliselle kommunikaatiolle.
+
+Tänä päivänä ONVIF-jäseniä on yli 500 yritystä, ja lähes kaikki markkinoilla olevat IP-kamerat tukevat jotakin ONVIF-profiilia.
+
+## ONVIF-profiilit
+
+### Profile S – Perus-IP-kamera (yleisin)
+Kattaa:
+- Video streaming (RTSP)
+- PTZ-ohjaus
+- Videokonfiguraatio
+- Tapahtumailmoitukset
+- Käyttäjähallinta
+
+Profile S on perus-ONVIF – jos kamerassa lukee "ONVIF compatible", se tarkoittaa yleensä Profile S:ää.
+
+### Profile G – Tallennin ja reunatallentaminen
+Kattaa tallenteen hallinnan: rekisteröinti, haku, playback NVR:stä tai SD-kortilta.
+
+### Profile T – H.264/H.265 ja metadata
+Uudempi profiili (2018). Lisää:
+- H.265-tuki
+- Metatietovirrat (AI-analytiikan tulosten siirto)
+- HTTPS-viestintä
+- Liikkeentunnistus
+
+### Profile M – Metadata ja analytiikka (uusin, 2021)
+Standardoi AI-analytiikan metadatan siirtämisen – esim. kasvojen tunnistuksen tulokset.
+
+## ONVIF Device Discovery
+
+Verkossasi olevat ONVIF-laitteet voidaan löytää automaattisesti WS-Discovery-protokollalla:
+
+**ONVIF Device Manager (Windows)** – ilmainen työkalu laitteiden etsimiseen
+**ONVIFviewer** – Linux-yhteensopiva
+
+```bash
+# Linux: etsi ONVIF-laitteet verkosta
+sudo apt install onvif-gui
+```
+
+Tai käytä VMS-ohjelmistoa (Milestone, Nx Witness) joka tekee haun automaattisesti.
+
+## ONVIF:n rajoitukset käytännössä
+
+ONVIF ei tarkoita täydellistä yhteensopivuutta. Yleisiä ongelmia:
+
+**Profiilitason eroavuudet:**
+Kamera ilmoittaa Profile S -tuen, mutta toteuttaa vain osan ominaisuuksista.
+
+**Valmistajan laajennukset:**
+Dahuan AcuPick tai Hikvisionin AcuSearch eivät toimi ONVIF:n kautta – ne vaativat valmistajan SDK:n.
+
+**AI-analytiikka:**
+Profile M on uusi ja harva VMS tukee sitä vielä täysin. Useimmat AI-ominaisuudet toimivat vain saman valmistajan ekosysteemissä.
+
+**PTZ-ohjaus:**
+PTZ-komennot toimivat ONVIF:n kautta perustasolla, mutta jotkut kameran erikoisliikkeet eivät ole standardoitu.
+
+## ONVIF-yhteensopivuuden testaus
+
+1. Lataa **ONVIF Device Manager** (onvif.org)
+2. Hae laitteet automaattisesti tai lisää manuaalisesti IP-osoite
+3. Tarkista tuetut profiilit
+4. Testaa videovirta ja PTZ-ohjaus
+
+Virallinen ONVIF-vaatimustenmukaisuuden tietokanta: [onvif.org/conformant-products](https://www.onvif.org/conformant-products/)
+
+[Security.fi:n integraatio-opas](https://security.fi/oppaat/vms-integraatio) käy läpi ONVIF-yhdistämisen yleisimpiin VMS-ohjelmistoihin.
+
+## Usein kysytyt kysymykset
+
+### Toimivatko kaikki ONVIF-kamerat kaikkien tallentimien kanssa?
+
+Teoriassa kyllä, käytännössä ei aina. ONVIF takaa perustoimivuuden (videovirta, perus-PTZ), mutta valmistajan omat ominaisuudet (AI, älykkäät hälytykset, metadata) eivät toimi ONVIF:n kautta. Suositellaan saman valmistajan ekosysteemiä.
+
+### Miten tarkistan kamerani ONVIF-profiilin?
+
+Katso kameran tuotekortti tai valmistajan verkkosivut. Voit myös käyttää ONVIF Device Manager -työkalua, joka listaa kameraan yhdistettäessä tuetut profiilit automaattisesti.
+
+### Onko ONVIF ilmainen?
+
+ONVIF on avoin standardi, jonka käyttäminen ei maksa loppukäyttäjälle mitään. Laitevalmistajat maksavat ONVIF-jäsenmaksun, jos he haluavat saada tuotteilleen virallisen ONVIF-sertifioinnin.

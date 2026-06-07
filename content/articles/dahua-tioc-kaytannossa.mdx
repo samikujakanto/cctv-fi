@@ -1,0 +1,89 @@
+---
+title: "Dahua TiOC käytännössä – aktiiviset varoitukset"
+slug: "dahua-tioc-kaytannossa"
+category: "kamerat"
+excerpt: "Dahua TiOC yhdistää kameravalvontaan aktiiviset varoitukset: kamera havaitsee tunkeutumisen, sytyttää LED-valon ja toistaa äänihälytyksen. Pelote toimii ennen kuin mitään on tapahtunut."
+date: "2026-06-04"
+readTime: 8
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Dahua", "TiOC", "kamera", "aktiivinen pelote", "turvallisuus"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Dahua TiOC (Three in One Camera) yhdistää kolme toimintoa yhteen kameraan: AI-tunnistuksen, täysvärivalaistuksen pimeässä ja aktiivisen äänihälytyksen. Kun kamera tunnistaa ihmisen tai ajoneuvon suojatulla alueella, se sytyttää kirkkaan LED-valon ja toistaa äänihälytyksen automaattisesti – ilman erillistä valvontahenkilöä.
+
+## Mikä on Dahua TiOC?
+
+TiOC tarkoittaa "Three in One Camera". Konsepti on yksinkertainen:
+
+1. **AI-tunnistus** (WizSense-pohjainen) – erottelee ihmiset ja ajoneuvot
+2. **Täysvärivalaistus** – kirkkaat LED-valot sytyttävät pimeässä värikuvaa varten
+3. **Äänihälytys** – kamera toistaa äänen (ennalta tallennettu tai mukautettu)
+
+Tulos: aktiivinen pelotelaite, joka reagoi automaattisesti.
+
+## Miten TiOC toimii käytännössä?
+
+### Tapahtumaketju
+
+1. Henkilö astuu virtuaaliseen perimeterivyöhykkeeseen
+2. WizSense-algoritmi tunnistaa: onko kyseessä ihminen vai ajoneuvo?
+3. Jos tunnistetaan → LED-valot syttyvät välittömästi
+4. Kamera toistaa äänivaroituksen (esim. "Alueella on kameravalvonta")
+5. Tallennin lähettää push-ilmoituksen sovellukseen
+6. Väritallenne alkaa automaattisesti
+
+### Latenssi
+Reaktioaika tunnistuksesta toimintaan on tyypillisesti alle 500ms – käytännössä välitön.
+
+## Parhaat käyttökohteet
+
+**TiOC sopii erityisesti:**
+- Rakennustyömaat (korkea varastoriski, ei vakituista henkilöstöä)
+- Varastot ja logistiikka-alueet
+- Parkkihallit ja -alueet
+- Taloyhtiöiden pihat yöaikaan
+- Maatalous ja karjatilat
+
+**TiOC ei sovi:**
+- Tiloihin, joissa on jatkuva henkilöliikenne (liian paljon hälytyksiä)
+- Kirkkaasti valaistuihin tiloihin (LED-valo ei tehoa)
+
+## TiOC-mallien valinta
+
+Dahua tarjoaa TiOC-tekniikkaa useissa malleissa:
+
+| Malli | Resoluutio | IR-kantama | LED-teho |
+|-------|------------|------------|----------|
+| IPC-HDW3849H-AS-PV | 8 MP | - | 40m LED |
+| IPC-HFW2849S-S-IL | 8 MP | - | 30m LED |
+| IPC-HDW2849H-S-IL | 8 MP | - | 30m LED |
+| IPC-HFW3849T1-AS-PV | 8 MP | - | 40m LED |
+
+## Konfigurointi
+
+Tärkeimmät asetukset DMSS/DSS-käyttöliittymässä:
+
+1. **Tunnistusalueen piirto** – rajaa tarkasti valvottava alue
+2. **Reagointitapa** – LED + ääni / LED ilman ääntä / vain tallenne
+3. **Aikataulutus** – aktivoi vain yöaikaan tai aukioloajan ulkopuolella
+4. **Ääniviestin valinta** – tallennin tukee ennalta määrättyjä viestejä
+5. **Herkkyys** – suurempi arvo = enemmän hälytyksiä
+
+[Security.fi:n asentajat](https://security.fi/oppaat/dahua-tioc) konfiguroivat TiOC-järjestelmän kohteen mukaan optimaalisesti.
+
+## Usein kysytyt kysymykset
+
+### Onko TiOC laillinen Suomessa?
+
+Kyllä, kun kamera on asennettu omalle alueelle. Äänihälytys on sallittu normaalin kameravalvonnan yhteydessä. Valvontakyltti on pakollinen, ja äänihälytyksen käyttö tulee mainita tietosuojaselosteessa. Naapurin alueelle kuuluva ääni ei yleensä muodosta ongelmaa, mutta yöaikaan toistuva äänihälytys voi aiheuttaa valituksia.
+
+### Kuinka paljon TiOC-kamera maksaa?
+
+TiOC-kamerat ovat hieman kalliimpia kuin perinteiset IP-kamerat. Tyypillinen hinta on 150–300 € kameralta. Investointi maksaa itsensä takaisin jo yhdessä estetyssä murrossa tai varkaudessa.
+
+### Voiko TiOC integroida olemassaolevaan Dahua-järjestelmään?
+
+Kyllä, TiOC-kamerat ovat yhteensopivia Dahuan NVR-tallentimien kanssa. Kuitenkin kaikki AI-ominaisuudet vaativat WizSense-yhteensopivan NVR:n. Vanhemmissa tallentimissa kamera toimii perinteisenä IP-kamerana ilman TiOC-analytiikkaa.

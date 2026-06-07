@@ -1,0 +1,88 @@
+---
+title: "Dahuan AI-analytiikka – kaikki ominaisuudet selitettynä"
+slug: "dahua-ai-analytiikka"
+category: "kamerat"
+excerpt: "Dahua on yksi maailman johtavista AI-kameravalvontayhtiöistä. WizSense-tasolta WizMind-enterprise-analytiikkaan – tässä kaikki Dahuan AI-ominaisuudet selitettynä."
+date: "2026-06-01"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["Dahua", "AI", "WizSense", "WizMind", "analytiikka", "AcuPick"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Dahua jakaa AI-analytiikkansa kahteen tasoon: WizSense (perus, SMD Plus, ihminen/ajoneuvo) ja WizMind (kehittynyt, kasvojen tunnistus, ANPR, kävijälaskenta, lämpökartta, AcuPick). WizSense sopii kotiin ja pienyrityksiin, WizMind enterprise-kohteisiin. Dahuan AI-suoritin on integroitu suoraan kameraan – ei pilviyhteyden tarvetta analytiikkaan.
+
+## WizSense-analytiikka
+
+**SMD Plus (Smart Motion Detection Plus):**
+Kehittyneempi liiketunnistus joka erottelee:
+- Ihminen (Pedestrian)
+- Ajoneuvo (Motor Vehicle)
+- Ei-moottoriajoneuvo (pyörä, skuutti)
+- Muu liike (eläin, kasvi, sade)
+
+**IVS (Intelligent Video Surveillance):**
+- Tripwire (virtuaalinen lanka)
+- Intrusion detection (alue)
+- Abandoned object (hylätty esine)
+- Missing object (kadonnut esine)
+- Parking detection
+
+**Full Color Night:**
+Lisävalo (warm light LED) kytkeytyy päälle pimeässä → värikuva yöllä.
+
+## WizMind-analytiikka
+
+**Face Recognition (kasvojen tunnistus):**
+- VIP-tunnistus, musta/valkolistat
+- Reaaliaikaiset hälytykset
+- *GDPR-rajoitukset soveltuvat*
+
+**ANPR/LPR:**
+- Rekisterikilven automaattinen lukeminen
+- Musta/valkolistat
+- Reaaliaikahälytys tuntemattomasta rekisteristä
+
+**People Counting:**
+- Sisään/ulos-laskenta
+- Kertymä ja trendi
+- Kapasiteettivaroitus
+
+**Heat Map:**
+- Liikkumisen visualisointi kartalle
+- Aktiivisuuden tiheys-analyysi
+- Shoppailijoiden liikkuminen myymälässä
+
+**AcuPick:**
+- Hae henkilöä vaatteen värin/tyypin perusteella
+- Ei kasvojen tunnistusta → GDPR-ystävällisempi
+- Tulokset minuuteissa satojen tuntien tallenteista
+
+## Dahuan AI-prosessori
+
+Dahua käyttää omaa AI-prosessoria (DH-MCU) kameroissa:
+- Lite-taso: ARM Cortex-A – WizSense
+- Pro-taso: ARM Cortex-A + Mali GPU – WizMind
+- Ultra-taso: NPU (Neural Processing Unit) – kaikki ominaisuudet + 3D stereo
+
+Prosessointiteho kamerassa:
+- WizSense: ~0,5 TOPS (tera operations per second)
+- WizMind: ~2–4 TOPS
+
+[Security.fi:n Dahua-opas](https://security.fi/oppaat/dahua-ai) kattaa WizSense- ja WizMind-kameroiden valintaperusteet eri kohteisiin.
+
+## Usein kysytyt kysymykset
+
+### Tarvitaanko WizMind-ominaisuuksiin erillinen palvelin?
+
+Perus-WizMind-ominaisuudet toimivat suoraan kamerassa (edge AI). Laajamittainen kasvojentunnistus tai kattava ANPR-rekisteri vaatii DSS Pro -palvelimen. Pienissä kohteissa WizMind-kamera + WizMind-NVR riittää.
+
+### Voiko WizSense-kameran päivittää WizMindiksi firmwarella?
+
+Ei. WizSense ja WizMind ovat eri prosessoreilla varustettuja kameroita. Upgrade ei onnistu pelkällä ohjelmistopäivityksellä – laitteistopohja on erilainen.
+
+### Kuinka paljon WizMind lisää kameran hintaa?
+
+WizMind-kamera maksaa tyypillisesti 50–150 € enemmän kuin vastaava WizSense-malli. Koko järjestelmän tasolla lisähinta on perusteltavissa nopeammalla tapahtumaetsinnällä ja kehittyneemmällä analytiikalla.

@@ -1,0 +1,78 @@
+---
+title: "Crowd Analytics – väkijoukon analysointi kameravalvonnalla"
+slug: "crowd-analytics-kameravalvonta"
+category: "tekoäly"
+excerpt: "Crowd Analytics analysoi väkijoukon tiheyttä, liikkumista ja käyttäytymistä kameravalvonnalla. Teknologia mahdollistaa automaattiset hälytykset kun alue ylittyy ja turvallisuusriskejä ennakoidaan."
+date: "2026-05-28"
+readTime: 7
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["crowd analytics", "väkijoukko", "tekoäly", "turvallisuus", "hälytys"]
+---
+
+## Lyhyesti – AI-yhteenveto
+
+Crowd Analytics on tekoälypohjainen kameravalvontatoiminto, joka analysoi väkijoukon tiheyttä ja liikettä reaaliajassa. Järjestelmä voi hälyttää automaattisesti kun tietty henkilömäärä ylittyy (esim. max 200 henkilöä/100 m²), kun ihmisvirta liikkuu väärään suuntaan tai kun käyttäytyminen viittaa vaaratilanteeseen. Crowd analytics on GDPR-turvallinen kun se perustuu anonymisoituun analyysiiin.
+
+## Mitä Crowd Analytics tekee?
+
+### Crowd Density (tiheyslaskenta)
+Algoritmi laskee henkilömäärän neliömetrillä perustuen kuvassa näkyviin siluetteihin. Ei tunnista henkilöitä, vain tiheyden.
+
+Käyttö:
+- Kapasiteettirajan valvonta (palomääräykset, pandemiasäännöt)
+- Ruuhka-aikojen ennakointi
+
+### Crowd Direction (virtausanalyysi)
+Analysoii mihin suuntaan väkijoukko liikkuu. Tunnistaa väärään suuntaan kulkevat (esim. yksisuuntaisessa käytävässä).
+
+### Abnormal Behavior (poikkeavan käyttäytymisen tunnistus)
+- Nopeasti hajaantuva väkijoukko → mahdollinen paniikki
+- Pitkään paikallaan seisova joukko → mahdollinen onnettomuus tai uhkaus
+- Tunkkainen ihmisvirta (stampede detection)
+
+## Käyttökohteet
+
+**Tapahtumat ja festivaalit:**
+- Konserttialueen kapasiteetin seuranta reaaliajassa
+- Poistumisväylien sujuvuuden valvonta
+- Ruuhkahälytin järjestyksenvalvonnalle
+
+**Liikenteenohjaus:**
+- Metroasemien ruuhkahallinta
+- Lentokenttien lähtöhallien kapasiteetti
+
+**Kauppakeskukset:**
+- Myymälöiden täyttöasteen tasaaminen
+- Joulukiireen liikennohjaus
+
+**Kriittinen infrastruktuuri:**
+- Energiavoimaloiden turva-alueiden valvonta
+- Satamaterminaalien kulunvalvonta
+
+## Tekniset vaatimukset
+
+**Kamera:** Korkean resoluution yleiskuvaus (overview camera)
+- 8–12 MP fisheye (360° kattavuus)
+- Korkea asennus: 8–15 m mahdollistaa laajan näkyvyyden
+
+**Ohjelmisto:**
+- Dahua DSS Pro tai SmartPSS
+- Hikvision HikCentral
+- Kolmannen osapuolen VMS (Milestone, Nx Witness)
+
+[Security.fi:n asiantuntijat](https://security.fi/palvelut/tekoalyanalytiikka) toteuttavat Crowd Analytics -integraatiot tapahtumiin ja kiinteisiin kohteisiin.
+
+## Usein kysytyt kysymykset
+
+### Onko Crowd Analytics sama kuin people counting?
+
+Ei täysin. People counting laskee yksittäisiä henkilöitä sisään/ulos-virtauksena. Crowd Analytics analysoi kokonaistilannetta: tiheyttä, liikkumissuuntaa ja käyttäytymispoikkeavuuksia. Molemmat ominaisuudet voidaan yhdistää samaan järjestelmään.
+
+### Miten Crowd Analytics käsittelee GDPR:n?
+
+Crowd Analytics perustuu anonymisoituun massakäyttäytymisen analyysiin eikä tunnista yksittäisiä henkilöitä. Se on perusrakenteeltaan GDPR-turvallinen. Tietosuojaselosteessa tulee silti mainita käyttö ja tarkoitus.
+
+### Kuinka tarkka Crowd Analytics on ruuhkatilanteessa?
+
+Tiheyslaskenta on tarkkuudeltaan 85–95 % riippuen asennuskorkeudesta ja algoritmin laadusta. Erittäin tiheässä väkijoukossa (yli 4 hlö/m²) tarkkuus laskee koska siluetteja on vaikea erottaa. Tarkkuutta parannetaan useammalla kameralla eri kulmista.
