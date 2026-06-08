@@ -12,7 +12,7 @@ const authorJsonLd = {
   "@type": "Person",
   "@id": "https://cctv.fi/toimitus#sami-kuja-kanto",
   name: "Sami Kuja-Kanto",
-  jobTitle: "Kameravalvonnan asiantuntija, CCTV.fi päätoimittaja",
+  jobTitle: "Turvallisuusasiantuntija",
   description: "Sami Kuja-Kantolla on yli 20 vuoden kokemus turvallisuusalalta. Hän on Security Eye Finland Oy:n perustaja ja toimitusjohtaja. Erikoisosaaminen: kameravalvontajärjestelmät, GDPR-tietosuoja, NIS2-compliance, AI-analytiikka ja IoT-tietoturva.",
   knowsAbout: [
     "kameravalvonta", "IP-kamerat", "GDPR", "tietosuoja", "NIS2",

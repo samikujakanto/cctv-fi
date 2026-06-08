@@ -162,7 +162,7 @@ export default async function ArticlePage({ params }: Props) {
           <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg, #3b82f6, #06b6d4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>👤</div>
           <div>
             <Link href="/toimitus" style={{ fontWeight: 700, color: "#f9fafb", fontSize: 15 }}>Sami Kuja-Kanto</Link>
-            <p style={{ color: "#6b7280", fontSize: 13 }}>CCTV.fi päätoimittaja · 20+ vuotta kameravalvonnan asiantuntijana</p>
+            <p style={{ color: "#6b7280", fontSize: 13 }}>Turvallisuusasiantuntija · 20+ vuotta kameravalvonnan asiantuntijana</p>
           </div>
         </div>
         <p style={{ color: "#9ca3af", fontSize: 14, lineHeight: 1.6, marginBottom: "0.75rem" }}>
