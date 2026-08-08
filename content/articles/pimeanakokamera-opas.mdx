@@ -1,0 +1,172 @@
+---
+title: "Pimeänäkökamerat 2026 – IR, Full Color ja termaalinen vertailussa"
+slug: "pimeanakokamera-opas"
+category: "kamerat"
+excerpt: "Pimeänäkökamerat jaetaan IR-kamerioihin (mustavalkoinen yökuva), Full Color -kameroihin (värikuva lisävalolla) ja termaalisiin (lämpöhahmon tunnistus). Vertailemme tekniikat ja kerromme milloin mikäkin sopii."
+date: "2026-08-08"
+readTime: 9
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["pimeänäkö", "IR-kamera", "Full Color", "termaalinen kamera", "yövalvonta"]
+---
+
+Yli 60 % kameravalvontatapahtumista tapahtuu heikon valon olosuhteissa – illalla, yöllä tai pimeissä tiloissa. Oikean pimeänäkötekniikan valinta on siksi kriittinen osa kameravalvontajärjestelmää.
+
+## Kolme pimeänäkötekniikkaa
+
+### 1. IR-kamerat (infrapunavalo)
+Yleisin tekniikka. Kamera lähettää näkymätöntä infrapunavaloa (850 nm tai 940 nm) ja kuvaa heijastuvan valon. Tulos: terävä mustavalkoinen kuva täydessä pimeydessä.
+
+**Edut:**
+- Toimii täydessä pimeydessä ilman lisävaloa
+- Halvempi kuin Full Color tai termaalinen
+- IR-etäisyys jopa 80–200 m (pitkä IR)
+
+**Haitat:**
+- Mustavalkoinen → ei väri-informaatiota varkaan asusta
+- IR-valo voi häiritä (silmissä kirkas punavalo 850 nm:n mallissa)
+- Heijastelee kirkkaita pintoja (luminen piha, valkoiset seinät)
+
+### 2. Full Color -kamerat (lisävalo)
+Sisäänrakennettu valkoinen LED tai valaistusapuri tuottaa värikuvaa myös pimeässä. Hikvision ColorVu, Dahua Full Color ja Hanwha WDR ovat tunnettuja merkkejä.
+
+**Edut:**
+- Värikuva pimeässä → tunnistettavat vaatteet, ajoneuvo
+- Toimii ilman erillisiä IR-lamppuja
+- Parempi laatu hämärässä kuin IR-kameroissa
+
+**Haitat:**
+- LED-valo näkyy → voi häiritä naapureita
+- LED-elinikä ~30 000 h (noin 10 vuotta jatkuvassa käytössä)
+- Hinta 20–30% korkeampi kuin vastaava IR-kamera
+- Ei toimi äärimmäisessä pimeydessä ilman lisävaloa
+
+### 3. Termaalinen kamera (lämpökuvaus)
+Ei tarvitse valoa lainkaan. Tunnistaa lämpöhahmon pimeässä, sumussa, sateessa. Ei pysty lukemaan tekstiä tai tunnistamaan kasvoja, mutta havaitsee liikkeen erittäin pitkältä etäisyydeltä.
+
+**Edut:**
+- Toimii täydessä pimeydessä, sumussa, sateessa
+- Pitkä kantama (ihminen 100–800 m, VCA-analytics)
+- Ei reagoi valomuutoksiin, vilkkuviin valoihin
+
+**Haitat:**
+- Kallis (1 500–20 000 €/kamera)
+- Ei tunnista kasvoja tai lukutekstejä
+- Ei värejä
+- Ei sovi sisäkäyttöön
+
+## Vertailutaulukko
+
+| Ominaisuus | IR-kamera | Full Color | Termaalinen |
+|-----------|----------|------------|-------------|
+| Hinta | 80–300 € | 120–500 € | 1 500–20 000 € |
+| Täysi pimeys | Kyllä | Ei (tarvitsee LED) | Kyllä |
+| Värikuva | Ei | Kyllä | Ei (lämpövärit) |
+| Etäisyys | 30–200 m | 20–50 m | 100–1 000 m |
+| Kasvotunnistus | Hyvä | Erinomainen | Ei |
+| Sumu/sade | Kohtalainen | Huono | Erinomainen |
+
+## IR-tekniikat tarkemmin
+
+### 850 nm vs 940 nm IR
+- **850 nm:** Punainen hehku lampussa näkyy silmälle. Tehokkaampi, halvempi. Yleisempi.
+- **940 nm:** Täysin näkymätön ihmissilmälle. Käytetään kun ei haluta näkyvää punavalaistusta (esim. kasinot, VIP-tilat). Heikompi kantama.
+
+### Smart IR
+Automaattinen IR-tehon säätö: kun kohde lähestyy, IR-teho laskee jottei kuva "pala" puhki. Hikvision EXIR, Dahua Smart IR.
+
+### Pitkä IR (Long Range IR)
+Erikoisvalaisimella varustettu kamera, joka valaisee 100–200 m päähän. Käytetään rajojen, teiden ja rantojen valvontaan.
+
+## Milloin mikäkin tekniikka?
+
+### Valitse IR-kamera kun:
+- Ulkokäyttö, asuntoalueet, varastot, pihat
+- Budjetti rajallinen
+- Ei tarvita väri-identifikaatiota (riittää tunnistaa liike)
+- LED-valo häiritsisi (naapurikiinteistöt)
+
+### Valitse Full Color kun:
+- Tarvitaan väri-identifikaatio yöllä (kasvot, vaatteet, ajoneuvo)
+- Sisäänkäynti, parkkihalli, kaupan sisätila
+- Laadukas kuva tärkeämpää kuin hinta
+
+### Valitse termaalinen kun:
+- Pitkä valvontaetäisyys (>100 m)
+- Kriittinen infrastruktuuri (datakeskus, voimalat, satamat)
+- Sää tai sumu on haaste
+- Budjetti ei ole rajoite
+
+## Parhaat pimeänäkömallit 2026
+
+### IR-kamerat
+
+**Hikvision DS-2CD2143G2-I (4 MP, IR 40 m)**
+- AcuSense (ihminen/ajoneuvo-erottelu)
+- H.265+
+- IP67, IK10
+- Hinta: ~120 €
+
+**Dahua IPC-HDW3849H-AS-PV (8 MP, Full Duplex)**
+- Smart Dual Light (IR + väri)
+- AI-hälytys
+- IP67
+- Hinta: ~180 €
+
+### Full Color -kamerat
+
+**Hikvision DS-2CD2347G2-LU (4 MP ColorVu)**
+- Värikuva 30 m saakka
+- Sisäänrakennettu mikrofoni
+- Hinta: ~160 €
+
+**Dahua IPC-HDW3849H-ZAS-PV (8 MP Full Color)**
+- Automaattinen IR/valkoisenvalo-vaihto
+- Zoom 2.7–13.5 mm
+- Hinta: ~250 €
+
+### Termaalinen
+
+**Hikvision DS-2TD2628-7/QA**
+- 8 mm thermal + 4 MM optinen
+- VCA-analytiikka (ihminen/ajoneuvo)
+- IP66
+- Hinta: ~2 500 €
+
+## Asennusvinkit pimeänäkökameroille
+
+### IR-kameran sijoitus
+- Älä asenna IR-valaisinta suoraan vaaleaa seinää kohden → heijastus sokeuttaa
+- Varmista etteivät lehdet, oksat tai muut esteet ole kuvakentässä (IR heijastuu)
+- Testaa aina pimeässä ennen luovutusta
+
+### Full Color -kameran sijoitus
+- LED-valo valaisee 180° kulmaa – suuntaa poispäin naapureista
+- Testaa pimeässä: LED-valo riittävä halutulle alueelle
+
+### Talvivaatimukset
+Suomen olosuhteissa:
+- Lämpötila-alue vähintään -40°C…+60°C (tärkeä pohjoisessa)
+- Sisäinen lämmitys -kameran sisälle kondensaation estämiseksi
+- IP67 tai parempi kotelointiluokka (lumisulaminen + jäätyminen)
+
+## Energiankulutus
+
+| Tyyppi | Kulutus (W) |
+|--------|------------|
+| IR-kamera (30 m IR) | 5–8 W |
+| Full Color (LED päällä) | 8–15 W |
+| PTZ IR | 12–25 W |
+| Termaalinen | 10–30 W |
+
+PoE-kytkimellä hallitaan helposti. 8 kameran järjestelmä kuluttaa ~60–100 W.
+
+## Yhteenveto
+
+**IR-kamera** on perusjärjestelmä ulkokäyttöön – toimii täydessä pimeydessä, hinta-laatu-suhde hyvä.
+
+**Full Color** on paras valinta kohteisiin, joissa tarvitaan väri-identifikaatio yöllä – sisäänkäynnit, parkit, kaupat.
+
+**Termaalinen** on ammattilaisten työkalu suuriin alueisiin ja kriittiseen infrastruktuuriin – hinta on korkea mutta suorituskyky ylivoimainen.
+
+Epävarma valinnasta? [Security.fi](https://security.fi) tekee ilmaisen kartoituksen ja suosittelee oikeaa tekniikkaa kohteellesi.

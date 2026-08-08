@@ -1,0 +1,167 @@
+---
+title: "Kameravalvonnan ja kulunvalvonnan integraatio – yhtenäinen turvallisuusjärjestelmä"
+slug: "kameravalvonta-kulunvalvonta-integraatio"
+category: "oppaat"
+excerpt: "Kameravalvonta ja kulunvalvonta yhdessä muodostavat tehokkaampaa kuin erikseen: ovitapahtuma laukaisee kameranäkymän, kasvojentunnistus avaa oven, yksi hallintapaneeli näyttää kaiken. Opimme integraation hyödyt, tekniikat ja kustannukset."
+date: "2026-08-08"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["kulunvalvonta", "integraatio", "VMS", "turvallisuusjärjestelmä", "kameravalvonta"]
+---
+
+Erillään toimivat kameravalvonta ja kulunvalvonta ovat hyödyllisiä – mutta yhdessä ne muodostavat todellisen turvallisuusjärjestelmän. Integraatiolla saat automaattisen reagoinnin, todistusaineistoa jokaisesta ovitapahtumasta ja yksinkertaisemman hallintanäkymän.
+
+## Mitä integraatio tarkoittaa?
+
+Integroitu järjestelmä tarkoittaa, että kamera- ja kulunvalvontajärjestelmät kommunikoivat keskenään automaattisesti:
+
+- **Ovi avataan** → kamera kääntyy sille ovelle ja tallentaa tapahtuman
+- **Hälytyslaukaisin laukeaa** → lähimmät kamerat aloittavat liiketarkkuustallenteen
+- **Kasvojentunnistus** → tunnistaa henkilön → avaa oven ilman korttia
+- **Tunkeutuminen** → kamera-hälytys → ovi lukitaan automaattisesti
+
+## Integraation hyödyt
+
+### 1. Automaattinen todistusaineisto
+Jokainen kulunvalvontatapahtuma (oven avaus, kortinluku, PIN-koodi) liitetään automaattisesti videotallenteeseen samalta ajanhetkeltä. Perinteisessä rinnakkasjärjestelmässä etsit tapahtuma-aikaa kahdesta eri järjestelmästä erikseen.
+
+### 2. Nopea tutkinta
+Etsi korttirekisterin mukaan: "Kuka oli toimistolla tänään 02:15?" → järjestelmä näyttää kaikki korttilukemat + kameranäkymät samassa näkymässä.
+
+### 3. Poikkeamien automaattinen havaitseminen
+- Kortti luetaan mutta kukaan ei kameran mukaan kulje ovesta → epäilyttävää
+- Ovi avataan mutta korttirekisteri ei näytä tapahtumaa → tunkeutuminen?
+
+### 4. Yksi hallintapaneeli
+Valvomossa yksi näyttö näyttää sekä kamerat että kulunvalvontatapahtumat. Ei tarvita kahta erillistä ohjelmistoa.
+
+## Integraatiotekniikat
+
+### Tapa 1: Sama valmistaja, natiivi integraatio
+Helpoin ratkaisu: käytä saman valmistajan kamera- ja kulunvalvontajärjestelmiä.
+
+**Hikvision DS-K + iVMS-4200:**
+- Hikvision ovijärjestelmä (DS-K1T671TM, DS-K2604T) + Hikvision kamerat
+- iVMS-4200 hallitsee molempia samassa sovelluksessa
+- Kasvojentunnistus suoraan ovipäätteessä (natiivi)
+
+**Dahua VTH/VTO + DSS Pro:**
+- Dahua ovipuhelimet ja -lukijat + Dahua kamerat
+- DSS Pro VMS integroi molemmat
+- Toimii myös mobiililla
+
+### Tapa 2: VMS-ohjelmiston integraatio (vendor-neutral)
+Käytä VMS-ohjelmistoa, joka tukee sekä kamera- että kulunvalvontalaitteita useammalta valmistajalta.
+
+**Milestone XProtect:**
+- Tukee satoja kamera- ja kulunvalvontavalmistajia
+- Yksi paneeli kaikelle
+- Kalliimpi (lisenssimaksu per kamera/ovi)
+- Paras suuriin kohteisiin (>50 kameraa)
+
+**Genetec Security Center:**
+- Teollinen standardi pankeissa, lentokentillä
+- Täysin integroitu kamera+kulku+LPR+henkilötunnus
+- Hinta: korkea (Enterprise)
+
+**Avigilon Control Center:**
+- Vahva AI-analytiikka (Avigilon on Motorola Solutions)
+- Integroitu kasvojentunnistus ja kulunvalvonta
+
+### Tapa 3: API-integraatio (räätälöity)
+Kehittäjä rakentaa integraation valmistajien API:en avulla. Joustavin mutta kallein. Sopii kun erikoistoiminnallisuus tarvitaan (esim. kassajärjestelmä + kamera + kulku).
+
+## Kasvojentunnistus kulunvalvonnassa
+
+Edistyksellisimmät järjestelmät tunnistavat henkilön kasvojen perusteella ja avaavat oven – ilman korttia tai PIN-koodia.
+
+### Miten se toimii?
+1. Kamera skannaa henkilön kasvot (1–2 metriä ovesta)
+2. AI vertaa kasvoihin tietokannassa
+3. Tunnistusaika: <1 sekunti
+4. Ovi aukeaa tai ei
+
+### Suomalainen lainsäädäntö
+Biometrinen data (kasvojentunnistus) on GDPR:n erityinen henkilötietoluokka. Käyttö vaatii:
+- **Eksplisiittinen suostumus** jokaiselta henkilöltä
+- **Vaihtoehto on tarjottava** (kortti, PIN) – ei pakollinen biometriikka
+- **Säilytysaika**: vain niin kauan kuin työsuhde/sopimus on voimassa
+- **Tietosuojaseloste**: mainittava biometrinen tunnistus
+
+Lue lisää: [Kasvojentunnistus Suomessa – laki ja käytäntö](https://cctv.fi/artikkelit/kasvojentunnistus-suomessa/)
+
+## Tyypilliset integraatioskenaariot
+
+### Toimisto (20–200 henkeä)
+- Kulunvalvonta: RFID-kortit + ovipääte
+- Kamerat: sisäänkäynneillä, aulassa
+- Integraatio: Hikvision natiivi tai pienemmällä VMS:llä
+- Hinta: 5 000–20 000 €
+
+### Tehdas / varasto
+- Kulunvalvonta: RFID + ranneke + aikaleimaus
+- Kamerat: sisäänkäynnit, lattiapinta, lastauslaiturit
+- Integraatio: Aikataulupohjainen (yöllä suljettu + kamera-hälytykset)
+- Hinta: 20 000–100 000 €
+
+### Datavertisto
+- Kulunvalvonta: kaksivaiheinen (kortti + PIN tai biometria)
+- Kamerat: kaikki käytävät, serveritila
+- Integraatio: Korkean tason VMS (Genetec, Milestone)
+- Hinta: 50 000–500 000 €
+
+### Asuinkiinteistö (taloyhtiö)
+- Kulunvalvonta: avainkoodi tai mobiiliopeaminen
+- Kamerat: pääovella, parkkihallissa, porraskäytävässä
+- Integraatio: Yksinkertainen (ovi aukeaa → kamera tallentaa)
+- Hinta: 3 000–15 000 €
+
+## Yleisimmät integraatiovirheet
+
+### Virhe 1: Eri valmistajat ilman suunnittelua
+Ostetaan Hikvision kamerat ja Bosch kulunvalvonta – integraatio vaatii kalliin VMS-lisenssin tai API-kehityksen.
+
+**Ratkaisu:** Päätä ekosysteemi ennen hankinnan aloittamista.
+
+### Virhe 2: Verkon erottaminen väärin
+Kamera- ja kulunvalvontaverkot samassa VLAN:issa → tietoturvaongelma.
+
+**Ratkaisu:** Erillinen VLAN kummallekin, palomuuri välissä.
+
+### Virhe 3: Kelloaika ei synkronoitu
+Kameran aika eroaa kulunvalvonnan ajasta 5 minuuttia → tutkinta vaikeutuu.
+
+**Ratkaisu:** NTP-aika samasta lähteestä kaikille laitteille.
+
+### Virhe 4: Kasvojentunnistus ilman sopimuksia
+GDPR-rikkomus ilman henkilötietoja käsittelevää rekisterinpitäjäsopimusta.
+
+**Ratkaisu:** Ota lakimies mukaan ennen biometrisen järjestelmän käyttöönottoa.
+
+## Kustannusarvio integraatiolle
+
+| Tyyppi | Investointi | Lisäarvo |
+|--------|------------|---------|
+| Natiivi integraatio (Hikvision/Dahua) | 0 € (sisältyy) | Perustasoinen |
+| VMS-ohjelmisto (Milestone essential) | 200–500 €/v per kamera | Täysi integraatio |
+| API-kehitys (räätälöity) | 5 000–30 000 € | Täysin räätälöity |
+| Kasvojentunnistus lisämoduuli | 1 000–5 000 € | Biometriikka |
+
+## Tulevaisuus: AI-pohjainen yhtenäisjärjestelmä
+
+Seuraava sukupolvi yhdistää:
+- Videota, kulunvalvontaa, LPR:ää ja IoT-antureita
+- AI analysoi poikkeamat reaaliajassa
+- Automaattinen vaste (lukitus, hälytys, viesti)
+- Kaikki pilvipalvelussa tai paikallisessa laitteistossa
+
+**VSaaS (Video Surveillance as a Service)** -alustat ovat jo tässä: pilvipohjaiset ratkaisut integroivat kameran, kulunvalvonnan ja hälytyksen SaaS-mallilla.
+
+Lue lisää: [Pilvipohjaiset kameravalvontapalvelut – VSaaS vertailu](https://cctv.fi/artikkelit/paras-pilvipohjainen-kameravalvonta/)
+
+## Yhteenveto
+
+Kameravalvonnan ja kulunvalvonnan integraatio tuottaa selkeää lisäarvoa: automaattinen todistusaineisto, nopeampi tutkinta ja yksinkertaisempi hallinta. Paras lähtökohta on valita sama valmistaja (Hikvision tai Dahua) ja hyödyntää natiivi-integraatiota. Laajemmissa kohteissa VMS-ohjelmisto (Milestone, Genetec) mahdollistaa multi-vendor -arkkitehtuurin.
+
+[Security.fi](https://security.fi) suunnittelee ja toteuttaa integroituja turvallisuusjärjestelmiä. Pyydä ilmainen kartoitus.

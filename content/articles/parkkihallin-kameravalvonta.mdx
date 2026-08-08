@@ -1,0 +1,161 @@
+---
+title: "Parkkihallin kameravalvonta 2026 – opas suunnittelijalle"
+slug: "parkkihallin-kameravalvonta"
+category: "oppaat"
+excerpt: "Parkkihallit ja pysäköintialueet ovat haastavia valvontakohteita: pitkät käytävät, matalat katot, hämärä valaistus. Opimme parhaat käytännöt kamerasijoitteluun, LPR-järjestelmiin ja AI-analytiikkaan."
+date: "2026-08-08"
+readTime: 10
+author: "CCTV.fi toimitus"
+featured: false
+tags: ["parkkihalli", "pysäköinti", "LPR", "kameravalvonta", "automaattinen rekisterikilven luku"]
+---
+
+Parkkihalli ja pysäköintialue ovat tilastollisesti yleisimpiä paikkoja, joissa ajoneuvoihin kohdistuu varkauksia, ilkivaltaa ja törmäyksiä. Hyvä kameravalvonta suojaa sekä ajoneuvoja että kiinteistönomistajaa vastuuvaatimuksilta.
+
+## Parkkihallin erityishaasteet
+
+### Valaistus
+Parkkihalleissa valon määrä vaihtelee rajusti: sisäänkäynti on kirkas, syvemmät osat pimeitä. Normaalit kamerat eivät sovellu ilman:
+- **WDR (Wide Dynamic Range):** Kompensoi kirkkaan/pimeän kontrasti
+- **Matalan valon kamerat:** F1.6 tai parempi aukko, IR-valaisu
+- **Full Color -tekniikka** (Dahua/Hikvision): värikuva pimeässä lisävalolla
+
+### Pystysuuntainen kuvaus
+Parkkihallin matala katto (2,1–2,4 m) tarkoittaa, että kamerat täytyy sijoittaa matalalle ja kuvata loivassa kulmassa. Laajakulmaobjektiivi (90–120°) on välttämätön.
+
+### Pitkät käytävät
+Yhden käytävän kattaminen voi vaatia useamman kameran tai PTZ-ratkaisun.
+
+## Kameratyypit parkkihalliin
+
+### Fisheye-kamera (360°)
+Yksi fisheye-kamera katon keskellä kattaa täydellisesti koko autopaikan tai käytävän risteyskohdan. Resoluutio jaetaan 360°, joten yksityiskohdat voivat olla rajallisia.
+
+**Käyttö:** Avoimet sisätilat, käytävien risteykset
+
+### Laajakulma-dome
+2–4 MP dome-kamera 110° kulmalla kattaa 2–3 autopaikkaa kylki-kylki.
+
+**Käyttö:** Yksittäiset parkkirivistöt, tasanteen valvonta
+
+### LPR-kamera (rekisterikilven luku)
+Erikoiskamera, joka lukee rekisterikilven automaattisesti. Vaatii kapean kuvakentän (30–50°) ja tarkan valaistuksen. IR-valaistus 850 nm yleinen.
+
+**Käyttö:** Sisäänkäynnit, uloskäynnit, porttikontrolli
+
+### PTZ-kamera
+Yksi PTZ voidaan asentaa suureen parkkihalliin ja ohjata manuaalisesti tai automaattisesti hälytysten perusteella.
+
+**Käyttö:** Isot parkkihallit (>200 autopaikkaa), portit
+
+## Kamerasijoittelun suunnittelu
+
+### Sisäänkäynnit ja uloskäynnit (PAKOLLINEN)
+- LPR-kamera jokaiselle kaistalle
+- Asennuskorkeus 1,8–2,2 m (kilpi suoraan kuvakentässä)
+- Etäisyys 3–5 m portista (LPR-lukuetäisyys)
+- Toinen kamera kuljettajan kasvoille (1,5–1,8 m)
+
+### Pysäköintitasanteet
+- 1 kamera / 8–12 autopaikkaa
+- Sijoitus käytävän päähän tai katon keskelle
+- Kuvauskulma: loiva, ei täysin alas
+
+### Porrashuoneet ja hissit
+- Hissin sisäkamera (DOM 90°, 1,5 m kattoon)
+- Portaan syötöt (ylä+ala)
+- Pyörätuoliluiskat (ilkivalta)
+
+### Peräseinät (sokeat pisteet)
+- Parkkihallin perimmäinen seinusta on tilastollisesti riskisin alue
+- Kamera kohteena jokainen sokea piste
+
+## LPR-järjestelmä (rekisterikilven luku)
+
+LPR (License Plate Recognition) automatisoi pysäköinninvalvonnan, tunnistaa kuukausiasiakkaat ja hälyttää mustalla listalla olevista ajoneuvoista.
+
+### Miten LPR toimii?
+1. Ajoneuvo saapuu → LPR-kamera kuvaa kilven
+2. OCR-ohjelmisto (optinen merkintunnistus) lukee kilven
+3. Tietokanta tarkistaa: sallittu / kielletty / maksettu
+4. Puomi avautuu tai hälytys laukeaa
+
+### LPR-kameroiden vaatimukset
+- Resoluutio: vähintään 2 MP, kilven koko kuvassa 25–35%
+- Nopeus: lukee ajoneuvo myös liikkeessä (max 30 km/h)
+- IR-valaisu: kilpi luettavissa pimeässä
+- Suositellut: Hikvision iDS-2CD7A26G0/P-IZHS, Dahua ANPR-kamera
+
+### LPR-ohjelmistot
+- **Hikvision iVMS + ANPR moduuli**: Integroitu ratkaisu Hikvision-järjestelmälle
+- **Genetec AutoVu**: Toimii usean valmistajan kanssa, skaalautuu suuriin halleihin
+- **Milestone + ANPR Bridge**: Joustava yhdistelmä
+- **EasyANPR**: Yksinkertaisempi, edullisempi ratkaisu
+
+## AI-analytiikka parkkihallissa
+
+### Wrong-way detection (väärä ajosuunta)
+Hälyttää, kun ajoneuvo ajaa yksisuuntaisella tiellä väärään suuntaan. Estää törmäykset.
+
+### Ajoneuvon jääminen tunneliin
+Hälyttää, kun ajoneuvo on seissyt paikoillaan yli X minuuttia (esim. hätätilanne, polttoaine loppui).
+
+### Henkilöiden havaitseminen
+Hälyttää, jos pysäköintihallissa liikkuu henkilöitä aikataulujen ulkopuolella (yö, suljettu tila).
+
+### Tulipalon/savun havaitseminen
+Videoanalytiikka voi tunnistaa savun jopa nopeammin kuin perinteiset paloilmaisimet parkkihallin korkeissa tiloissa.
+
+## Tekniset vaatimukset
+
+### Tallentimen kapasiteetti
+Parkkihalli 20 kameraa, 4 MP, H.265:
+- Liiketunnistustallennusaika: ~8 h/vrk × 20 kameraa
+- Tallennusaika 30 vrk: ~2 TB
+
+Laskuri: [CCTV.fi tallennustilan laskentaopas](https://cctv.fi/artikkelit/tallennustilan-laskentaopas/)
+
+### Verkon kaistanleveys
+IP-järjestelmässä 20 × 4 MP -kameraa vaatii noin 40–60 Mbps sisäverkon kaistaa.
+
+### Tallentimen sijoitus
+Laitekaappi lukitussa tilassa (ei autohallissa itsessään). Tietoturva: erillinen VLAN kameraverkolle.
+
+## Lainsäädäntö ja GDPR
+
+Parkkihallin kameravalvonta vaatii:
+- **Tietosuojaseloste:** Julkistettava kaikille kävijöille (kyltti sisäänkäynnillä)
+- **Rekisterinpitäjä:** Kiinteistönomistaja tai hallinnointifirma
+- **Säilytysaika:** Max 30 vrk yleinen, lakiasioissa pidempi sallittu
+- **Pääsy tallenteisiin:** Vain nimetyillä henkilöillä
+- **LPR-data:** Rekisterikilvet ovat henkilötietoa → GDPR soveltuu täysimääräisesti
+
+Lue lisää: [Kameravalvonnan lait Suomessa](https://cctv.fi/artikkelit/kameravalvonnan-lait-suomessa-2026/)
+
+## Kustannusarvio
+
+### Pieni parkkihalli (50 autopaikkaa)
+- 8 dome-kameraa: 8 × 120 € = 960 €
+- 2 LPR-kameraa: 2 × 400 € = 800 €
+- NVR + kova levy: 500 €
+- Asennus + kaapelointi: 1 500 €
+- LPR-ohjelmisto: 500 €/v
+- **Yhteensä: ~4 260 € + SaaS**
+
+### Keskisuuri parkkihalli (200 autopaikkaa)
+- 30 kameraa (sisältää PTZ): ~8 000 €
+- 4 LPR-kameraa: ~2 000 €
+- NVR-järjestelmä: 2 000 €
+- Asennus: 6 000 €
+- Ohjelmisto (vuosi): 1 500 €
+- **Yhteensä: ~19 500 €**
+
+## Toimittajat Suomessa
+
+Security.fi on erikoistunut parkkihallin kameravalvontajärjestelmiin. Tarjoamme:
+- Ilmainen kohdekartoitus
+- Kaapelointi ja asennus
+- LPR-integraatio
+- Huoltopalvelu
+
+[Pyydä ilmainen tarjous →](https://security.fi/tarjous/)
