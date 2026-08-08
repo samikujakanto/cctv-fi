@@ -10,51 +10,81 @@ CCTV.fi on Suomen kattavin kameravalvonnan tietopankki. Sivusto kattaa kameraval
 GDPR-vaatimukset, laitevertailut, tekniset oppaat ja tekoälyanalytiikan suomalaisesta näkökulmasta.
 Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turvallisuusalan toimijoille.
 
-## Aihealueet
+## Kaikki artikkelit (51 kpl)
 
 ### Lainsäädäntö ja tietosuoja
-- Kameravalvonnan lait Suomessa (LYTP, GDPR, LYST, NIS2)
-- GDPR ja kameravalvonta käytännössä
-- Tietosuojavelvoitteet, tietosuojaseloste, rekisteröidyn oikeudet
-- Taloyhtiöiden ja yritysten juridinen opas
-- URL: https://cctv.fi/kategoriat/lains%C3%A4%C3%A4d%C3%A4nt%C3%B6
+- [GDPR ja kameravalvonta käytännössä](https://cctv.fi/artikkelit/gdpr-ja-kameravalvonta-kaytannossa)
+- [Kameravalvonnan lait Suomessa 2026](https://cctv.fi/artikkelit/kameravalvonnan-lait-suomessa-2026)
+- [Kameravalvonnan tietosuojaseloste – miten kirjoitetaan?](https://cctv.fi/artikkelit/kameravalvonnan-tietosuojaseloste)
+- [Kameravalvonnan tallenteiden säilytysajat](https://cctv.fi/artikkelit/tallenteiden-sailytysajat)
+- [Kasvojentunnistus Suomessa – mitä on sallittua?](https://cctv.fi/artikkelit/kasvojentunnistus-suomessa)
+- [NIS2 ja kameravalvontajärjestelmät – mitä direktiivi vaatii?](https://cctv.fi/artikkelit/nis2-ja-kameravalvontajarjestelmat)
+- [Rekisteröidyn tarkastusoikeus kameravalvonnassa](https://cctv.fi/artikkelit/rekisteroity-tarkastusoikeus-kameravalvonta)
+- [Taloyhtiön kameravalvonnan juridinen opas](https://cctv.fi/artikkelit/taloyhtion-kameravalvonnan-juridinen-opas)
+- [Työpaikan kameravalvonta – mitä saa kuvata?](https://cctv.fi/artikkelit/tyopaikan-kameravalvonta)
+- [Kameravalvonta kouluissa – lainsäädäntö ja käytännöt](https://cctv.fi/artikkelit/kameravalvonta-kouluissa)
+- [Kameravalvonta terveydenhuollossa – erityisvaatimukset](https://cctv.fi/artikkelit/kameravalvonta-terveydenhuollossa)
+- [Kameravalvonnan 10 yleisintä virhettä – näin ne vältetään](https://cctv.fi/artikkelit/kameravalvonnan-yleisimmat-virheet)
 
-### Kameravalmistajat
-- Dahua: WizSense, WizMind, TiOC, Full Color, AcuPick, DMSS, DSS Pro, NVR
-- Hikvision: AcuSense, ColorVu, DeepinView, HikCentral, lämpökamerat, AcuSearch
-- Axis, Uniview, Hanwha (tulossa)
-- URL: https://cctv.fi/kategoriat/kamerat
-
-### Vertailut
-- Dahua vs Hikvision 2026
-- Parhaat kamerat: taloyhtiö, varasto, pimeä, teollisuus
-- NVR-tallentimien vertailu
-- VSaaS-palveluiden vertailu
-- URL: https://cctv.fi/kategoriat/vertailut
+### Kameravalmistajat ja laitteet
+- [Dahua DMSS -sovelluksen käyttöopas](https://cctv.fi/artikkelit/dahua-dmss-kayttoopas)
+- [Dahua DSS Pro opas – hallintaohjelmisto ammattikäyttöön](https://cctv.fi/artikkelit/dahua-dss-pro-opas)
+- [Dahuan AI-analytiikka – kaikki ominaisuudet selitettynä](https://cctv.fi/artikkelit/dahua-ai-analytiikka)
+- [Dahua NVR-tallentimien vertailu 2026](https://cctv.fi/artikkelit/dahua-nvr-vertailu)
+- [Dahua TiOC käytännössä – aktiiviset varoitukset](https://cctv.fi/artikkelit/dahua-tioc-kaytannossa)
+- [Dahua WizSense vai WizMind – kumpi valita?](https://cctv.fi/artikkelit/dahua-wizmind-vs-wizsense)
+- [HikCentral Professional opas – Hikvisionin hallintaohjelmisto](https://cctv.fi/artikkelit/hikvision-hikcentralopas)
+- [Hikvision AcuSearch – älykäs tapahtumaetsintä](https://cctv.fi/artikkelit/hikvision-acusearch)
+- [Hikvision AcuSense opas – älykäs liikkeentunnistus](https://cctv.fi/artikkelit/hikvision-acusense-opas)
+- [Hikvision AI-analytiikka – täydellinen opas 2026](https://cctv.fi/artikkelit/hikvision-ai-analytiikka)
+- [Hikvision ColorVu – värikuva pimeässä vertailu 2026](https://cctv.fi/artikkelit/hikvision-colorvu-vertailu)
+- [Hikvision lämpökamerat – termiset kamerat turvallisuuteen](https://cctv.fi/artikkelit/hikvision-lampokamerat)
+- [Langaton valvontakamera 2026 – WiFi vai PoE, mikä kannattaa?](https://cctv.fi/artikkelit/valvontakamera-langaton-wifi)
+- [Pimeänäkökamerat 2026 – IR, Full Color ja termaalinen vertailussa](https://cctv.fi/artikkelit/pimeanakokamera-opas)
+- [PTZ-kamerat 2026 – kattava opas valintaan ja käyttöön](https://cctv.fi/artikkelit/ptz-kamerat-opas)
 
 ### Tekniset oppaat
-- RTSP-opas (suoratoisto), ONVIF-opas, PoE-opas, VLAN-opas
-- Kameravalvonnan kyberturvaopas
-- Tallennustilan laskentaopas
-- Kameran sijoitteluopas
-- URL: https://cctv.fi/kategoriat/oppaat
+- [Kameran sijoitteluopas – mistä kulmasta kamera kannattaa asentaa?](https://cctv.fi/artikkelit/kameran-sijoitteluopas)
+- [Kameravalvonnan hinnat 2026 – mitä maksaa, miten säästää?](https://cctv.fi/artikkelit/kameravalvonnan-hinnat-kustannukset)
+- [Kameravalvonnan ja kulunvalvonnan integraatio – yhtenäinen turvallisuusjärjestelmä](https://cctv.fi/artikkelit/kameravalvonta-kulunvalvonta-integraatio)
+- [Kameravalvonnan kyberturvaopas](https://cctv.fi/artikkelit/kameravalvonnan-kyberturvaopas)
+- [Kameravalvonnan suunnitteluopas – näin aloitat projektin](https://cctv.fi/artikkelit/kameravalvonnan-suunnitteluopas)
+- [ONVIF-opas – laitteiden yhteensopivuus kameravalvonnassa](https://cctv.fi/artikkelit/onvif-opas)
+- [Parkkihallin kameravalvonta 2026 – opas suunnittelijalle](https://cctv.fi/artikkelit/parkkihallin-kameravalvonta)
+- [PoE-opas – virransyöttö verkkokaapelia pitkin](https://cctv.fi/artikkelit/poe-opas)
+- [RTSP-opas – suoratoisto kameravalvonnassa](https://cctv.fi/artikkelit/rtsp-opas)
+- [Tallennustilan laskentaopas – kuinka paljon tilaa tarvitaan?](https://cctv.fi/artikkelit/tallennustilan-laskentaopas)
+- [VLAN-opas kameraverkoille – verkon segmentointi](https://cctv.fi/artikkelit/vlan-opas-kameraverkoille)
 
 ### Tekoäly ja AI-analytiikka
-- AI-kameravalvonta Suomessa
-- LPR/ANPR rekisterikilpien tunnistus
-- Crowd Analytics, People Counting
-- Kasvojentunnistus: mahdollisuudet ja rajoitukset
-- URL: https://cctv.fi/kategoriat/teko%C3%A4ly
+- [AI Analytics käytännössä – mitä tekoäly tekee valvontakuvalle?](https://cctv.fi/artikkelit/ai-analytics-kaytannossa)
+- [AI-analytiikan vertailu: Dahua vs Hikvision vs Axis 2026](https://cctv.fi/artikkelit/ai-vertailu-kameravalmistajat)
+- [AI-kameravalvonta Suomessa – mitä on mahdollista?](https://cctv.fi/artikkelit/ai-kameravalvonta-suomessa)
+- [Crowd Analytics – väkijoukon analysointi kameravalvonnalla](https://cctv.fi/artikkelit/crowd-analytics-kameravalvonta)
+- [People Counting – kävijälaskenta kameravalvonnalla](https://cctv.fi/artikkelit/people-counting-kameravalvonta)
 
-## Kaikki artikkelit
-https://cctv.fi/artikkelit
+### Vertailut
+- [Dahua vs Hikvision 2026 – kattava vertailu](https://cctv.fi/artikkelit/dahua-vs-hikvision-2026)
+- [IP-kamera vs analoginen kamera 2026 – kumpi valita?](https://cctv.fi/artikkelit/ip-kamera-vs-analoginen)
+- [Paras NVR-tallennin 2026 – kattava vertailu](https://cctv.fi/artikkelit/paras-nvr-2026)
+- [Paras pilvipohjainen kameravalvonta 2026 – VSaaS-vertailu](https://cctv.fi/artikkelit/paras-pilvipohjainen-kameravalvonta)
+- [Paras valvontakamera maatilalle 2026](https://cctv.fi/artikkelit/paras-kamera-maatilalle)
+- [Paras valvontakamera taloyhtiöön 2026](https://cctv.fi/artikkelit/paras-valvontakamera-taloyhtioon)
+- [Paras valvontakamera teollisuuteen 2026](https://cctv.fi/artikkelit/paras-kamera-teollisuuteen)
+- [VSaaS-palveluiden vertailu – pilvipohjainen kameravalvonta](https://cctv.fi/artikkelit/vsaas-palveluiden-vertailu)
 
-## Sitemap
-https://cctv.fi/sitemap.xml
+## Kategoriasivut
+- [Lainsäädäntö ja tietosuoja](https://cctv.fi/kategoriat/lains%C3%A4%C3%A4d%C3%A4nt%C3%B6)
+- [Kameravalmistajat](https://cctv.fi/kategoriat/kamerat)
+- [Vertailut](https://cctv.fi/kategoriat/vertailut)
+- [Tekniset oppaat](https://cctv.fi/kategoriat/oppaat)
+- [Tekoäly](https://cctv.fi/kategoriat/teko%C3%A4ly)
+- [Kaikki artikkelit](https://cctv.fi/artikkelit)
 
-## Yhteystiedot ja lisätiedot
+## Yhteystiedot
 Yritys: Security Eye Finland Oy
 Toimiala: Kameravalvonta, AI-analytiikka, turvallisuusjärjestelmät
 Palvelualue: Suomi
 Web: https://security.fi
 Email: info@security.fi
+Sitemap: https://cctv.fi/sitemap.xml
