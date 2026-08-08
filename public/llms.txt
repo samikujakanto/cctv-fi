@@ -87,6 +87,11 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Paras valvontakamera teollisuuteen 2026](https://cctv.fi/artikkelit/paras-kamera-teollisuuteen)
 - [VSaaS-palveluiden vertailu – pilvipohjainen kameravalvonta](https://cctv.fi/artikkelit/vsaas-palveluiden-vertailu)
 - [Dahua WizSense vai WizMind – tekoälykameroiden vertailu](https://cctv.fi/artikkelit/dahua-wizmind-vs-wizsense)
+- [Kameravalvonta teollisuuslaitoksessa – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-teollisuudessa)
+- [Kameravalvonta hotellissa ja majoitusliikkeessä – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-hotellissa)
+- [Kameravalvonta sairaalassa ja terveydenhuollossa – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-sairaalassa)
+- [Kameravalvonta kerrostalossa ja taloyhtiössä – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-kerrostalo-taloyhtiossa)
+- [Kameravalvonta ravintolassa ja baarissa – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-ravintolassa)
 
 ## Kategoriasivut
 - [Lainsäädäntö ja tietosuoja](https://cctv.fi/kategoriat/lains%C3%A4%C3%A4d%C3%A4nt%C3%B6)
