@@ -10,7 +10,7 @@ CCTV.fi on Suomen kattavin kameravalvonnan tietopankki. Sivusto kattaa kameraval
 GDPR-vaatimukset, laitevertailut, tekniset oppaat ja tekoälyanalytiikan suomalaisesta näkökulmasta.
 Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turvallisuusalan toimijoille.
 
-## Kaikki artikkelit (51 kpl)
+## Kaikki artikkelit (57 kpl)
 
 ### Lainsäädäntö ja tietosuoja
 - [GDPR ja kameravalvonta käytännössä](https://cctv.fi/artikkelit/gdpr-ja-kameravalvonta-kaytannossa)
@@ -42,6 +42,8 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Langaton valvontakamera 2026 – WiFi vai PoE, mikä kannattaa?](https://cctv.fi/artikkelit/valvontakamera-langaton-wifi)
 - [Pimeänäkökamerat 2026 – IR, Full Color ja termaalinen vertailussa](https://cctv.fi/artikkelit/pimeanakokamera-opas)
 - [PTZ-kamerat 2026 – kattava opas valintaan ja käyttöön](https://cctv.fi/artikkelit/ptz-kamerat-opas)
+- [Axis Communications kameravalvonta – opas 2026](https://cctv.fi/artikkelit/axis-kameravalvonta-opas)
+- [4K-kameravalvonta 2026 – hyödyt, hinnat ja milloin kannattaa?](https://cctv.fi/artikkelit/4k-kameravalvonta-opas)
 
 ### Tekniset oppaat
 - [Kameran sijoitteluopas – mistä kulmasta kamera kannattaa asentaa?](https://cctv.fi/artikkelit/kameran-sijoitteluopas)
@@ -51,6 +53,7 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Kameravalvonnan suunnitteluopas – näin aloitat projektin](https://cctv.fi/artikkelit/kameravalvonnan-suunnitteluopas)
 - [ONVIF-opas – laitteiden yhteensopivuus kameravalvonnassa](https://cctv.fi/artikkelit/onvif-opas)
 - [Parkkihallin kameravalvonta 2026 – opas suunnittelijalle](https://cctv.fi/artikkelit/parkkihallin-kameravalvonta)
+- [Milestone XProtect – kattava VMS-opas 2026](https://cctv.fi/artikkelit/milestone-xprotect-opas)
 - [PoE-opas – virransyöttö verkkokaapelia pitkin](https://cctv.fi/artikkelit/poe-opas)
 - [RTSP-opas – suoratoisto kameravalvonnassa](https://cctv.fi/artikkelit/rtsp-opas)
 - [Tallennustilan laskentaopas – kuinka paljon tilaa tarvitaan?](https://cctv.fi/artikkelit/tallennustilan-laskentaopas)
@@ -62,6 +65,10 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [AI-kameravalvonta Suomessa – mitä on mahdollista?](https://cctv.fi/artikkelit/ai-kameravalvonta-suomessa)
 - [Crowd Analytics – väkijoukon analysointi kameravalvonnalla](https://cctv.fi/artikkelit/crowd-analytics-kameravalvonta)
 - [People Counting – kävijälaskenta kameravalvonnalla](https://cctv.fi/artikkelit/people-counting-kameravalvonta)
+
+- [Kameravalvonta kaupassa ja myymälässä – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-kaupassa)
+- [Kameravalvonta rakennustyömaalla – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-rakennustyomaalla)
+- [Kameravalvonta varastossa ja logistiikassa 2026](https://cctv.fi/artikkelit/kameravalvonta-varastossa)
 
 ### Vertailut
 - [Dahua vs Hikvision 2026 – kattava vertailu](https://cctv.fi/artikkelit/dahua-vs-hikvision-2026)
