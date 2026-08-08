@@ -1,5 +1,5 @@
 import { getAllArticles } from "@/lib/articles";
-import ArticleCard from "@/components/ArticleCard";
+import { ArticleCard } from "@/components/ArticleCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
