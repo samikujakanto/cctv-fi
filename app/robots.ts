@@ -16,6 +16,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "Bytespider", allow: "/" },
     ],
-    sitemap: "https://cctv.fi/sitemap.xml",
+    sitemap: ["https://cctv.fi/sitemap.xml", "https://cctv.fi/ai-sitemap.xml"],
   };
 }
