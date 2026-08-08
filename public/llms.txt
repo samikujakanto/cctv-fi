@@ -10,7 +10,7 @@ CCTV.fi on Suomen kattavin kameravalvonnan tietopankki. Sivusto kattaa kameraval
 GDPR-vaatimukset, laitevertailut, tekniset oppaat ja tekoälyanalytiikan suomalaisesta näkökulmasta.
 Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turvallisuusalan toimijoille.
 
-## Kaikki artikkelit (57 kpl)
+## Kaikki artikkelit (61 kpl)
 
 ### Lainsäädäntö ja tietosuoja
 - [GDPR ja kameravalvonta käytännössä](https://cctv.fi/artikkelit/gdpr-ja-kameravalvonta-kaytannossa)
@@ -27,6 +27,7 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Kameravalvonnan 10 yleisintä virhettä – näin ne vältetään](https://cctv.fi/artikkelit/kameravalvonnan-yleisimmat-virheet)
 
 ### Kameravalmistajat ja laitteet
+- [Axis Communications kameravalvonta – opas 2026](https://cctv.fi/artikkelit/axis-kameravalvonta-opas)
 - [Dahua DMSS -sovelluksen käyttöopas](https://cctv.fi/artikkelit/dahua-dmss-kayttoopas)
 - [Dahua DSS Pro opas – hallintaohjelmisto ammattikäyttöön](https://cctv.fi/artikkelit/dahua-dss-pro-opas)
 - [Dahuan AI-analytiikka – kaikki ominaisuudet selitettynä](https://cctv.fi/artikkelit/dahua-ai-analytiikka)
@@ -39,21 +40,20 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Hikvision AI-analytiikka – täydellinen opas 2026](https://cctv.fi/artikkelit/hikvision-ai-analytiikka)
 - [Hikvision ColorVu – värikuva pimeässä vertailu 2026](https://cctv.fi/artikkelit/hikvision-colorvu-vertailu)
 - [Hikvision lämpökamerat – termiset kamerat turvallisuuteen](https://cctv.fi/artikkelit/hikvision-lampokamerat)
+- [4K-kameravalvonta 2026 – hyödyt, hinnat ja milloin kannattaa?](https://cctv.fi/artikkelit/4k-kameravalvonta-opas)
 - [Langaton valvontakamera 2026 – WiFi vai PoE, mikä kannattaa?](https://cctv.fi/artikkelit/valvontakamera-langaton-wifi)
 - [Pimeänäkökamerat 2026 – IR, Full Color ja termaalinen vertailussa](https://cctv.fi/artikkelit/pimeanakokamera-opas)
 - [PTZ-kamerat 2026 – kattava opas valintaan ja käyttöön](https://cctv.fi/artikkelit/ptz-kamerat-opas)
-- [Axis Communications kameravalvonta – opas 2026](https://cctv.fi/artikkelit/axis-kameravalvonta-opas)
-- [4K-kameravalvonta 2026 – hyödyt, hinnat ja milloin kannattaa?](https://cctv.fi/artikkelit/4k-kameravalvonta-opas)
 
 ### Tekniset oppaat
+- [IP-kamera vs analoginen kamera 2026 – kumpi valita?](https://cctv.fi/artikkelit/ip-kamera-vs-analoginen)
 - [Kameran sijoitteluopas – mistä kulmasta kamera kannattaa asentaa?](https://cctv.fi/artikkelit/kameran-sijoitteluopas)
 - [Kameravalvonnan hinnat 2026 – mitä maksaa, miten säästää?](https://cctv.fi/artikkelit/kameravalvonnan-hinnat-kustannukset)
-- [Kameravalvonnan ja kulunvalvonnan integraatio – yhtenäinen turvallisuusjärjestelmä](https://cctv.fi/artikkelit/kameravalvonta-kulunvalvonta-integraatio)
+- [Kameravalvonnan ja kulunvalvonnan integraatio](https://cctv.fi/artikkelit/kameravalvonta-kulunvalvonta-integraatio)
 - [Kameravalvonnan kyberturvaopas](https://cctv.fi/artikkelit/kameravalvonnan-kyberturvaopas)
 - [Kameravalvonnan suunnitteluopas – näin aloitat projektin](https://cctv.fi/artikkelit/kameravalvonnan-suunnitteluopas)
 - [ONVIF-opas – laitteiden yhteensopivuus kameravalvonnassa](https://cctv.fi/artikkelit/onvif-opas)
 - [Parkkihallin kameravalvonta 2026 – opas suunnittelijalle](https://cctv.fi/artikkelit/parkkihallin-kameravalvonta)
-- [Milestone XProtect – kattava VMS-opas 2026](https://cctv.fi/artikkelit/milestone-xprotect-opas)
 - [PoE-opas – virransyöttö verkkokaapelia pitkin](https://cctv.fi/artikkelit/poe-opas)
 - [RTSP-opas – suoratoisto kameravalvonnassa](https://cctv.fi/artikkelit/rtsp-opas)
 - [Tallennustilan laskentaopas – kuinka paljon tilaa tarvitaan?](https://cctv.fi/artikkelit/tallennustilan-laskentaopas)
@@ -66,26 +66,36 @@ Sisältö on suunnattu taloyhtiöille, yrityksille, IT-ammattilaisille ja turval
 - [Crowd Analytics – väkijoukon analysointi kameravalvonnalla](https://cctv.fi/artikkelit/crowd-analytics-kameravalvonta)
 - [People Counting – kävijälaskenta kameravalvonnalla](https://cctv.fi/artikkelit/people-counting-kameravalvonta)
 
+### Kohteet
 - [Kameravalvonta kaupassa ja myymälässä – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-kaupassa)
+- [Kameravalvonta koulussa ja oppilaitoksessa – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-koulussa)
 - [Kameravalvonta rakennustyömaalla – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-rakennustyomaalla)
+- [Kameravalvonta toimistossa ja yrityksessä – opas 2026](https://cctv.fi/artikkelit/kameravalvonta-toimistossa)
 - [Kameravalvonta varastossa ja logistiikassa 2026](https://cctv.fi/artikkelit/kameravalvonta-varastossa)
+
+### Ohjelmistot (VMS)
+- [Avigilon Control Center (ACC) – VMS-opas 2026](https://cctv.fi/artikkelit/avigilon-control-center-opas)
+- [Genetec Security Center – VMS-opas 2026](https://cctv.fi/artikkelit/genetec-security-center-opas)
+- [Milestone XProtect – kattava VMS-opas 2026](https://cctv.fi/artikkelit/milestone-xprotect-opas)
 
 ### Vertailut
 - [Dahua vs Hikvision 2026 – kattava vertailu](https://cctv.fi/artikkelit/dahua-vs-hikvision-2026)
-- [IP-kamera vs analoginen kamera 2026 – kumpi valita?](https://cctv.fi/artikkelit/ip-kamera-vs-analoginen)
 - [Paras NVR-tallennin 2026 – kattava vertailu](https://cctv.fi/artikkelit/paras-nvr-2026)
 - [Paras pilvipohjainen kameravalvonta 2026 – VSaaS-vertailu](https://cctv.fi/artikkelit/paras-pilvipohjainen-kameravalvonta)
 - [Paras valvontakamera maatilalle 2026](https://cctv.fi/artikkelit/paras-kamera-maatilalle)
 - [Paras valvontakamera taloyhtiöön 2026](https://cctv.fi/artikkelit/paras-valvontakamera-taloyhtioon)
 - [Paras valvontakamera teollisuuteen 2026](https://cctv.fi/artikkelit/paras-kamera-teollisuuteen)
 - [VSaaS-palveluiden vertailu – pilvipohjainen kameravalvonta](https://cctv.fi/artikkelit/vsaas-palveluiden-vertailu)
+- [Dahua WizSense vai WizMind – tekoälykameroiden vertailu](https://cctv.fi/artikkelit/dahua-wizmind-vs-wizsense)
 
 ## Kategoriasivut
 - [Lainsäädäntö ja tietosuoja](https://cctv.fi/kategoriat/lains%C3%A4%C3%A4d%C3%A4nt%C3%B6)
-- [Kameravalmistajat](https://cctv.fi/kategoriat/kamerat)
+- [Kameravalmistajat ja laitteet](https://cctv.fi/kategoriat/kamerat)
 - [Vertailut](https://cctv.fi/kategoriat/vertailut)
 - [Tekniset oppaat](https://cctv.fi/kategoriat/oppaat)
 - [Tekoäly](https://cctv.fi/kategoriat/teko%C3%A4ly)
+- [Kohteet](https://cctv.fi/kategoriat/kohteet)
+- [Ohjelmistot](https://cctv.fi/kategoriat/ohjelmistot)
 - [Kaikki artikkelit](https://cctv.fi/artikkelit)
 
 ## Yhteystiedot
@@ -95,3 +105,4 @@ Palvelualue: Suomi
 Web: https://security.fi
 Email: info@security.fi
 Sitemap: https://cctv.fi/sitemap.xml
+AI-optimoitu sisällysluettelo: https://cctv.fi/ai-sitemap.xml
